@@ -115,10 +115,14 @@ docker-compose up -d
 
 # set DATABASE_URL variable for prisma, e.g. in .env
 # DATABASE_URL="postgresql://prisma:prisma@localhost:5432/ai_model"
+# also ensure Prisma uses the binary engine or a suitable adapter
+# you can export PRISMA_CLIENT_ENGINE_TYPE=binary
 
 npm run prisma:migrate   # creates and applies migration based on schema
 npm run prisma:seed      # load languages from root lang.json
 ```
+
+Before running the app you must also have the Postgres adapter installed (`npm install @prisma/adapter-pg`), which is already included in dependencies. The PrismaService constructor uses this adapter when instantiating the client so startup succeeds.
 
 The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
