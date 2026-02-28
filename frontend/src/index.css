@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global defaults – body classes applied via Layout root div */
+
+/* manually add color utilities in case Tailwind scanning misses them */
+@layer utilities {
+  /* background colors */
+  .bg-gray-50 { background-color: #f9fafb; }
+  .bg-white { background-color: #ffffff; }
+  .bg-green-600 { background-color: #16a34a; }
+  .bg-green-700 { background-color: #15803d; }
+  .bg-blue-600 { background-color: #2563eb; }
+  .bg-blue-700 { background-color: #1d4ed8; }
+
+  /* text colors */
+  .text-blue-600 { color: #2563eb; }
+  .text-gray-600 { color: #4b5563; }
+  .text-gray-800 { color: #1f2937; }
+  .text-gray-500 { color: #6b7280; }
+}

@@ -1,0 +1,1637 @@
+{
+  "country": "Nigeria",
+  "total": 529,
+  "languages": [
+    {
+      "name": "English",
+      "type": "official",
+      "info": "English is a West Germanic language that emerged in early medieval England and has since become a global lingua franca. The namesake of the language is the Angles, one of the Germanic peoples who migrated to Britain after the end of Roman rule. English is the most spoken language in the world, primarily due to the global influences of the former British Empire and the United States. It is the most widely learned second language in the world, with more second-language speakers than native speakers. However, English is only the third-most spoken native language, after Mandarin Chinese and Spanish."
+    },
+    {
+      "name": "Nigerian Pidgin",
+      "type": "creole",
+      "otherNames": [
+        "Pidgin"
+      ],
+      "info": "Nigerian Pidgin or NPE, also known simply as Pidgin or as Naij\u00e1 in scholarship, is an English-based creole language spoken as a lingua franca or vehicular language across Nigeria. The language is sometimes referred to as Pijin or Vernacular, and it has over time become the speech form with the widest geographical coverage and largest amount of speakers in Nigeria besides English."
+    },
+    {
+      "name": "Hausa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Hausa is a Chadic language spoken primarily by the Hausa people in Niger and in the northern parts of Nigeria, Ghana, Cameroon, Benin and Togo and the southern parts of Chad. It is also spoken by a significant minority in Ivory Coast and a small number of speakers in Sudan."
+    },
+    {
+      "name": "Yoruba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yoruba is a Niger-Congo language that is spoken in West Africa, primarily in South West Nigeria, Benin, and parts of Togo. It is spoken by the Yoruba people. Yoruba speakers number roughly 50 million, including around 2 million second-language or L2 speakers. As a pluricentric language, it is primarily spoken in a dialectal area spanning Nigeria, Benin, and Togo with smaller migrated communities in Ivory Coast, Sierra Leone and Gambia."
+    },
+    {
+      "name": "Igbo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Spoken withing the igbo people of nigeria, Abia, Anambra, Ebonyie, Imo, Enugu states and some parts of Delta state, Rivers, etc It is the primary lingua in the Eastern Nigeria"
+    },
+    {
+      "name": "Fulfulde",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Fula, also known as Fulani or Fulah, is a Senegambian language spoken by around 36.8 million people as a set of various dialects in a continuum that stretches across some 18 countries in West and Central Africa. Along with other related languages such as Serer and Wolof, it belongs to the Atlantic geographic group within Niger\u2013Congo, and more specifically to the Senegambian branch. Unlike most Niger-Congo languages, Fula does not have tones."
+    },
+    {
+      "name": "Kanuri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kanuri is a Saharan dialect continuum of the Nilo\u2013Saharan language family spoken by the Kanuri and Kanembu peoples in Nigeria, Niger, Chad and Cameroon, as well as by a diaspora community residing in Sudan."
+    },
+    {
+      "name": "Tiv",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tiv is a Tivoid language spoken in some states in North Central Nigeria, with some speakers in Cameroon. It had over 5.2 million speakers in 2024. The largest population of Tiv speakers are found in Benue state in Nigeria. The language is also widely spoken in some Nigerian states namely, Plateau, Taraba, Nasarawa, Cross River, Adamawa, Kaduna, and Abuja. It is by far the largest of the Tivoid languages, a group of languages belonging to the Southern Bantoid languages."
+    },
+    {
+      "name": "Ibibio",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ibibio is the native language of the Ibibio people of Nigeria, belonging to the Ibibio-Efik dialect cluster of the Cross River languages. The name Ibibio is sometimes used for the entire dialect cluster. In pre-colonial times, it was written with Nsibidi ideograms, similar to Igbo, Efik, Anaang, and Ejagham. Ibibio has also had influences on Afro-American diasporic languages such as AAVE words like buckra which come from the Ibibio word mbakara and in the Afro-Cuban tradition of abakua."
+    },
+    {
+      "name": "Efik",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Efik EF-ik is the indigenous language of the Efik people, who are situated in the present-day Cross River State and Akwa Ibom State of Nigeria, as well as in the north-west of Cameroon. The Efik language is mutually intelligible with other lower Cross River languages such as Ibibio, Anaang, Oro and Ekid but the degree of intelligibility in the case of Oro and Ekid is unidirectional; in other words, speakers of these languages speak and understand Efik but not vice versa. The Efik vocabulary has been enriched and influenced by external contact with the British, Portuguese and other surrounding communities such as Balondo, Oron, Efut, Okoyong, Efiat and Ekoi (Qua)."
+    },
+    {
+      "name": "Edo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Edo, also known as Bini, is the language spoken by the Edo people in Edo State, Nigeria. It was the primary language of the Benin Empire and its predecessor, Igodomigodo. It is the majority language spoken in Edo State, particularly in Benin City, and the surrounding local governments and senatorial districts in the Southern parts of the State."
+    },
+    {
+      "name": "Nupe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Nupe is a Volta\u2013Niger language of the Nupoid branch primarily spoken by the Nupe people of the North Central region of Nigeria. Its geographical distribution stretches and maintains preeminence in Niger State as well as Kwara, Kogi, Nasarawa and the Federal Capital Territory. Nupe is closely related to Kakanda in structure and vocabulary. There are at least two markedly different dialects of Nupe: Nupe central and Nupe Tako."
+    },
+    {
+      "name": "Ijaw",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Ijaw languages, also spelled \u1ecaj\u1ecd, are the languages spoken by over 14 million Ijaw people in Nigeria."
+    },
+    {
+      "name": "Itsekiri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Itsekiri language is a major branch of the Yoruboid group of languages, which as a group, is a key member of the Volta\u2013Niger sub-family of the Niger\u2013Congo family of African languages. Itsekiri is spoken by nearly 1,000,000 people in Nigeria as a first language and by many others as an additional language notably in the Niger Delta and in parts of Edo and Ondo states of Nigeria. The other key members of the Yoruboid group are Yoruba and Igala along with the various Yoruba dialects spoken in Benin and Togo."
+    },
+    {
+      "name": "Urhobo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Urhobo is a South-Western Edoid language spoken by the Urhobo people of southern Nigeria. It is from the Delta and Bayelsa States."
+    },
+    {
+      "name": "Isoko",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Isoko is an Edoid language, spoken by the Isoko people in the Isoko region of Delta State and Bayelsa. The Isoko language has about 20 to 21 dialects, but the Aviara/Uzere dialect is the standard dialect of the language."
+    },
+    {
+      "name": "Idoma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Idoma (\u00ccd\u0254\u0301m\u00e0) is the second official language spoken in Benue State in southeast-central Nigeria, by approximately one million people. The Idoma language is made up of the dialects of Agatu, Edumoga, Otukpo, Otukpa, Orokam, Akpa Agila, Utonkon, Igede, Etilo, Iyala. The Idoma people are predominantly hunters, farmers and fishermen. They are bordered to the north by Nasarawa, south by Cross River, east by Taraba and west by Enugu and Kogi States."
+    },
+    {
+      "name": "Igala",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Igala is a Yoruboid language, spoken by the Igala ethnic group of Nigeria. In 1989 an estimated 800,000 spoke Igala, primarily in Kogi State, though current estimates place the number of Igala speakers at upwards of 1.6 million. Dialects include Ibaji, Idah, Dekina, Ogugu, Ankpa, Olu, the Olumbanasaa group ; These lgala dialects share deep lexical (vocabulary) and structural similarities with the Yoruba and Itsekiri languages, with varying degrees of influence from neighbouring languages around the Niger-Benue triangular wedge where the Igala homeland is situated. Renowned linguist Kay Williamson recorded a cognate/similarity score of 66% between Yoruba and Igala, and a score of 56% between Igala and Itsekiri."
+    },
+    {
+      "name": "Ebira",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ebira is an Atlantic\u2013Congo language spoken by around 2 million people in middle belt Nigeria. It is the most divergent language with the central known as Okene."
+    },
+    {
+      "name": "Gbagyi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gwari is a Nupoid language spoken by the Gbagyi people, which make up over a million people in Nigeria. There are two principal varieties, Gbari and Gbagyi, which have some difficulty in communication; sociolinguistically they are distinct languages."
+    },
+    {
+      "name": "Jukun",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jukun may refer to:Jukun Takum language, a Jukunoid language of Cameroon used as a trade language in Nigeria\nJukun Wapan language or Wukari, a major Jukunoid language of Nigeria\nJukun Wurkum language or Jiba, a Jukunoid language of Nigeria\nDjugun language, an Australian Aboriginal language of Western Australia"
+    },
+    {
+      "name": "Bura",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bura is a Chadic language spoken in North-eastern Nigeria by the Bura-Pabir people. Dialects include Pela, Bura Pela, Hill Bura, Hyil Hawul, Bura Hyilhawul, and Plain Bura. The language is closely related to Kilba, Chibok, Margi and a few other north-eastern Nigerian Languages."
+    },
+    {
+      "name": "Margi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Margi, also known as Marghi and Marghi Central, is a Chadic language spoken in Nigeria, Cameroon, and Chad. It is perhaps the best described of the Biu\u2013Mandara branch of that family. Marghi South language and Putai are closely related and sometimes considered dialects of Margi."
+    },
+    {
+      "name": "Mumuye",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mumuye is by far the most populous of the Adamawa languages. It is spoken in northeastern Nigeria. It is classified in the Leko\u2013Nimbari branch of Savanna languages, as Adamawa is no longer considered a valid family. According to Ethnologue, there are multiple dialects: Zinna, Rang (Lamma), Dong, Yoro, Lankaviri, Gola (Bajama), Gongla, Kasaa, Saawa, Jalingo, Nyaaja, Jeng, Gnoore, Yaa, Sagbee, Shaari, Kugong, Mang, Kwaji, Meeka, Yakoko."
+    },
+    {
+      "name": "Bachama",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bachama (Bachama) is an Afro-Asiatic language of the Chadic branch that is spoken in Nigeria in Adamawa State principally in the Numan, Demsa and Lamurde Local Government Areas by the Bwatiye people. The Dialect spoken is KWA BWATIYE. There is Basa Pwa and Basa Voti and Njiya. The basa pwa accent is slightly different from that of bass Pwa and voti but all are the same people and tribe. Bachama is used as a trade language. It is often considered the same language as Bata."
+    },
+    {
+      "name": "Gwari",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gwari is a Nupoid language spoken by the Gbagyi people, which make up over a million people in Nigeria. There are two principal varieties, Gbari and Gbagyi, which have some difficulty in communication; sociolinguistically they are distinct languages."
+    },
+    {
+      "name": "Kuteb",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kuteb also known as Ati, Kutev, Mbarike is a Jukunoid and Nigerian ethnic language. The Kuteb people mostly live in the southern part of Taraba state in Nigeria, with a thousand-or-so speakers across the border in Cameroon. In Nigeria, it is spoken mostly in Takum and Ussa LGAs, and Yangtu SDA Taraba State."
+    },
+    {
+      "name": "Atyap",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Atyap are an ethnic group found majorly in Zangon-Kataf, Kaura and Jema'a Local Government Areas of southern Kaduna State and Riyom of Plateau State, Nigeria. They speak the Tyap language, one of the Central Plateau languages."
+    },
+    {
+      "name": "Angas",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngas, or Angas, is an Afro-Asiatic language spoken in Plateau State, Nigeria. The language has two dialects: Hill Angas and Plain Angas. Ngas is one of the major languages in Plateau State. The 1952 census puts it as the largest ethnic group in Plateau State. Retired General Yakubu Gowon is a prominent Nigerian who is of Ngas ethnicity."
+    },
+    {
+      "name": "Berom",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Berom or Birom is the most widely spoken Plateau language in Nigeria. The language is locally numerically important and is consistently spoken by Berom of all ages in rural areas. However, the Berom are shifting to Hausa in cities. The small Cen and Nincut dialects may be separate languages. Approximately 1 million (2010) people speak in this language."
+    },
+    {
+      "name": "Eggon",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Eggon, erroneously referred to as Mada - formerly a Plateau language spoken in central Nigeria. It is one of the major language in Nasarawa State."
+    },
+    {
+      "name": "Gwandara",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gwandara is a West Chadic language, and the closest relative of Hausa. Its several dialects are spoken in northern Nigeria, predominantly in the north central region of Nigeria by the Gwandara people and some settlers who are about 30,000 people. They are found in large numbers in Abuja, Niger, Kaduna, Kogi and a resettlement town of New Karshi, Karu LGA, Nasarawa State. New Karshi has a Gwandara first class emir Muhammadu Bako III (PhD)."
+    },
+    {
+      "name": "Shuwa Arabic",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Chadian Arabic, also known as Shuwa Arabic, Western Sudanic Arabic, or West Sudanic Arabic (WSA), is a variety of Arabic and the first language of 1.9 million people in Chad, both rural and urban inhabitants. Most of its speakers live in central and southern Chad. Its range is an east-to-west oval in the Sahel. Nearly all of this territory is within Chad and Sudan. It is also spoken elsewhere in the vicinity of Lake Chad in the countries of Cameroon, Nigeria and Niger. Finally, it is spoken in slivers of the Central African Republic. In addition, this language serves as a lingua franca in much of the region. In most of its range, it is one of several local languages and often not among the major ones."
+    },
+    {
+      "name": "Abanyom",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Abanyom, or Bakor, is a language of the Ekoid subfamily of Niger\u2013Congo. It is spoken by the Abanyom people in the Cross River State region of Nigeria. A member of the Southern Bantoid group, Abanyom is fairly closely related to the Bantu languages. It is tonal and has a typical Niger\u2013Congo noun class system."
+    },
+    {
+      "name": "Abon",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Abon (Ab\u00f5) is a Tivoid language of Nigeria."
+    },
+    {
+      "name": "Abua",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Abua (Abuan) is a Central Delta language of Nigeria."
+    },
+    {
+      "name": "Abureni",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Abureni is an Ijoid language, a Central Delta language of Nigeria."
+    },
+    {
+      "name": "Acipa Eastern",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Acipa Western",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Aduge",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Okpamheri (Opameri) is an Edoid language of Nigeria. The number of speakers is not known; there were about 30,000 people who spoke Okpamheri (Opameri) language in 1973. The language is moribund today."
+    },
+    {
+      "name": "Afo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Eloyi, or Afu (Afo) or Ajiri, is a Plateau language of uncertain classification. It is spoken by the Eloyi people of Agatu LGA and Otukpo LGA of Benue State and Nassarawa State in Nigeria."
+    },
+    {
+      "name": "Afade",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Afade (Afa\u0257\u0259) is an Afro-Asiatic language spoken in eastern Nigeria and northwestern Cameroon."
+    },
+    {
+      "name": "Ahan",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Aahan (\u00c0\u00e0h\u00e0n) is a divergent Volta\u2013Niger language of Nigeria, closely related only to Ayere."
+    },
+    {
+      "name": "Ajawa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ajawa is an extinct Afro-Asiatic language formerly spoken in Bauchi State, Nigeria. Ajawa became extinct between 1920 and 1940 as speakers switched to Hausa."
+    },
+    {
+      "name": "Akpes",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Akpes (\u00c0b\u00e8s\u00e0b\u00e8s\u00ec) is an endangered language of Nigeria. It is spoken by approximately 7,000 speakers in the North of Ondo State. The language is surrounded by several other languages of the Akoko area, where Yoruba is the lingua franca. Yoruba replaces Akpes in more and more informal domains and thus forwards a gradual shift from Akpes towards Yoruba. Akpes is generally attributed to the Volta-Congo Branch of the Niger-Congo phylum."
+    },
+    {
+      "name": "Akweya-Yachi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Ala",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ala, ALA, Alaa, or Alae may refer to:"
+    },
+    {
+      "name": "Alago",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Alago, or Idoma Nokwu, is an Idomoid language spoken by the Sub-Saharan peoples of Nigeria. The Alago people were originally one with the Idoma people of modern-day Benue state in Nigeria. However, the Alago people are believed to have broken up with their Idoma counterpart around 1200 AD."
+    },
+    {
+      "name": "Amo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Map (Timap), or Amo (Among), is a divergent Kainji language of Nigeria."
+    },
+    {
+      "name": "Anaguta",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Anaguta is a minority ethnic group in Plateau State of Nigeria."
+    },
+    {
+      "name": "Andi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Andi is a Northeast Caucasian language belonging to the Avar\u2013Andic branch spoken by about 5,800 ethnic Andi (2010) in the Botlikh region of Dagestan. The language is spoken in the villages Andi, Gunkha, Gagatl, Ashali, Rikvani, Chanko, Zilo, and Kvanxidatl."
+    },
+    {
+      "name": "Anyima",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Arigidi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "North Akoko, usually abbreviated as Akoko and also known as Arigidi, is a dialect cluster spoken in Nigeria. It is a branch of the YEAI (\"Yoruba\u2013Edo\u2013Akoko\u2013Igbo\") group of the Niger\u2013Congo languages. It is spoken in the Akoko Edo, and the LGAs of Akoko North East, Akoko North West, Ekiti East, and Ijumu (Ethnologue)."
+    },
+    {
+      "name": "Auyokawa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Auyokawa (Auyo), also known as Tirio, is an extinct Afro-Asiatic language formerly spoken in Auyo LGA, Jigawa State, Nigeria. It is known primarily from a list of numbers, the names of the days of the week, and a phrase."
+    },
+    {
+      "name": "Ayere",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ayere (Uwu) is a divergent Volta\u2013Niger language of Nigeria, closely related only to Ahaan."
+    },
+    {
+      "name": "Bade",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bade is a West Chadic language spoken by the Bade people in Yobe State and Jigawa State, Nigeria. Their traditional ruler is the Emir of Bade. Similar to many other Western African languages, Bade is a vulnerable language at great risk of extinction. With 356,000 speakers, the language and the culture of the Bade people have suffered over the last several years. As the language continues to fade, the culture and historic value associated with the language perishes as well. The local dialect is shifting from Bade to Hausa. Across West Africa, the impact on local communities through the loss of the indigenous tongues will be significant. The endangerment of the Bade language represents the worldwide language diversity that is at risk. Many African languages have only received little linguistic attention, impacting these African languages."
+    },
+    {
+      "name": "Bade North",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Bade South",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Baka",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Baka is a dialect cluster of Ubangian languages spoken by the Baka Pygmies of Cameroon and Gabon. Ethnically, the people are closely related to the Aka, collectively known as the Mbenga (Bambenga). However, the languages are not closely related within the Atlantic-Congo family, apart from some vocabulary dealing with the forest economy, which suggests the Aka may have shifted to Bantu, with an estimated 15,000 people having done so."
+    },
+    {
+      "name": "Bali",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bali may refer to any of several languages:Balinese language, spoken in Indonesia, especially the island of Bali\nBali language (Adamawa), spoken in Demsa, Adamawa, Nigeria\nBali language (DRC), a Bantu language spoken in the Democratic Republic of the Congo\nEast Teke language, a member of the Teke dialect continuum of the Congolese plateau\nBali (Li) dialect of Nga'ka language (Cameroon)\nUneapa language, spoken in Bali Island, Papua New Guinea"
+    },
+    {
+      "name": "Banda",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Banda language may refer to:One of the Banda languages of central Africa\nBanda language (Maluku), an Austronesian language of Indonesia\n\n"
+    },
+    {
+      "name": "Basa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Basa language may refer to:Basa languages, several languages of Nigeria\nBasaa language, a Bantu language of Cameroon\nBassa language, a Kru language of Liberia, Ivory Coast, and Sierra Leone\n\n"
+    },
+    {
+      "name": "Basa-Gumna",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Basa-Gumna is an extinct Kainji language of Nigeria. It was spoken in Chanchaga, Niger state, and Nasarawa, near the Basa homeland. Speakers have shifted to Hausa."
+    },
+    {
+      "name": "Bassa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Bassa language is a Kru language spoken by about 783,000 Bassa people in Liberia, Ivory Coast, and Sierra Leone."
+    },
+    {
+      "name": "Bata",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bata (Gbwata) is an Afro-Asiatic language spoken in Nigeria in Adamawa State in the Numan, Song, Fufore and Jimeta gire Yola maiha Demsa lamorde LGAs, and in Cameroon in North Province along the border with Nigeria. Dialects are Demsa, Garoua, Jirai, Kobotachi, Malabu, Ndeewe, Ribaw, Wadi, and Zumu (Jimo). It is often considered the same language as Bacama."
+    },
+    {
+      "name": "Beboid",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Beboid languages are any of two families of Southern Bantoid languages spoken principally in southwest Cameroon, although two are spoken over the border in southeast Nigeria. The Eastern Beboid languages may be most closely related to the Tivoid and Momo groups. The Western Beboid languages may be closer to Ekoid and Bantu."
+    },
+    {
+      "name": "Bekwarra",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bekwarra, also known as Bekworra, is a Bendi language of Nigeria. It is spoken by the Bekwarra people of Eastern Nigeria. Neighboring tribal groups such as the Nki and Iyala refer to the language and group as Yakoro."
+    },
+    {
+      "name": "Bena",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bena is a Bantu language spoken by the Bena people of the Iringa region of Tanzania."
+    },
+    {
+      "name": "Bette",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bette may refer to:"
+    },
+    {
+      "name": "Bile",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bile (Bille) is a Jarawan language spoken in Nigeria. They can be found domiciled in Adamawa state below the Benue river."
+    },
+    {
+      "name": "Bina",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bina is a Kainji language of Nigeria."
+    },
+    {
+      "name": "Bini",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Edo, also known as Bini, is the language spoken by the Edo people in Edo State, Nigeria. It was the primary language of the Benin Empire and its predecessor, Igodomigodo. It is the majority language spoken in Edo State, particularly in Benin City, and the surrounding local governments and senatorial districts in the Southern parts of the State."
+    },
+    {
+      "name": "Bole",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bole is a West Chadic language spoken in Nigeria. Dialects include Bara and Fika, spoken in the Fika Emirate. It is spoken by around 250,000 people. Bole is written with the Latin alphabet. Bole has two tones, a high tone marked with an acute accent and a low tone marked with a grave accent."
+    },
+    {
+      "name": "Bokyi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bokyi is a regionally important Bendi language spoken by the Bokyi people of northern Cross River State, Nigeria. It is ranked amongst the first fifteen languages of the about 520 living languages in Nigeria, with a few thousand speakers in Cameroon."
+    },
+    {
+      "name": "Buduma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yedina, also known as Buduma (Boudouma), is a Chadic language of the Biu\u2013Mandara branch spoken around Lake Chad in western Chad and neighbouring Cameroon and Nigeria."
+    },
+    {
+      "name": "Bukwen",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bukwen is a Southern Bantoid language of Cameroon. It is spoken in a single village south of Takum, just across the Cameeroonian border from Furu Awa. The only data on Bukwen is found in a 1971 survey report by Robert Koops. Based on this limited data, it appears to be a Western Beboid language of the Mundabli\u2013Buu group."
+    },
+    {
+      "name": "Burak",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Burak (\u0181\u00fa\u00far\u00e1k) is an Adamawa language spoken by the Burak people in Nigeria. The main settlement of the Burak, in the northern foothills of the Chonge-Mona Range, is called \"Burak\" by others but \"Tiire\" by its inhabitants. Estimates based on the census of 1991 give about 4,634 people living in the Burak Village Area. Other settlements where significant numbers of Burak people live include Looyii, Layara, Daajelum, Taljwi, Pirim, Nyuaabwetek, Nyuaafiikum, and Dikadit. The last of these was once the main settlement of the Burak."
+    },
+    {
+      "name": "Buru",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Buru or Buruese is a Malayo-Polynesian language of the Central Maluku branch. In 1991 it was spoken by approximately 45,000 Buru people who live on the Indonesian island of Buru. It is also preserved in the Buru communities on Ambon and some other Maluku Islands, as well as in the Indonesian capital Jakarta and in the Netherlands."
+    },
+    {
+      "name": "Bwatiye",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Challa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Challa or Chala or Challah may refer to:Chala, a region in Peru\nChalla (moth), a genus of moth in the family Erebidae\nChalla (surname)\nGer Challa, a Dutch chemist\n\"Challa\", a song by A. R. Rahman and Rabbi Shergill from the 2012 Indian film Jab Tak Hai Jaan"
+    },
+    {
+      "name": "Chibok",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Cibak is an Afro-Asiatic language spoken by about 200,000 who are majorly Kibaku people in Nigeria."
+    },
+    {
+      "name": "Chukkol",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Cishingini",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Shingini language is a Kainji language of Nigeria spoken by the Kambari people. Its two dialects are Tsishingini and Cishingini (Chishingini)."
+    },
+    {
+      "name": "Dadiya",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dadiya is one of the Savanna languages of northeastern Nigeria. They are found in Gombe, Adamawa & Taraba state. The Dadiya people of Gombe State are found in Balanga local government, while those in Adamawa and Taraba are found spread in Lamurde and Karim-Lamido Local government area respectively."
+    },
+    {
+      "name": "Daffo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ron is an Afro-Asiatic language cluster spoken in Plateau State, Nigeria. Dialects include Bokkos, Daffo-Mbar-Butura, Monguna/Manguna (Shagau),. Blench (2006) considers these to be separate languages."
+    },
+    {
+      "name": "Dakakari",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lela or C'lela is a Kainji language of Nigeria. It is known as Dakarkari in the Hausa language. Its speakers are known as the Lelna people."
+    },
+    {
+      "name": "Dandi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dandi may refer to:"
+    },
+    {
+      "name": "Dera",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dera a.k.a. Mangguar and Kamberataro (Komberatoro) is a Senagi language of Papua New Guinea and Indonesia. In Papua New Guinea, it is primarily spoken in Kamberataro village, Amanab Rural LLG, Sandaun Province."
+    },
+    {
+      "name": "Dibiyaso",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dibiyaso a.k.a. Bainapi is a Papuan language of Western Province, Papua New Guinea."
+    },
+    {
+      "name": "Dibo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dibo, a.k.a. Ganagana, Ganagawa, Zhitako, is a Nupoid language spoken in Nigeria. It is spoken in about twenty villages south of Lapai. There is only 66% cognacy with Central Nupe, out of 200 words."
+    },
+    {
+      "name": "Dirim",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Daka is one of two languages spoken by the Chamba people in Nigeria, the other being Chamba Leko."
+    },
+    {
+      "name": "Doka",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Doka is a Plateau language of Nigeria."
+    },
+    {
+      "name": "Dong",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Dong may refer to:Dong language (China), a Kra\u2013Dai language of China\nDong language (Nigeria), a Niger\u2013Congo language of Nigeria\n\n"
+    },
+    {
+      "name": "Duguri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jarawa is the most populous of the Jarawan languages of northern Nigeria. It is a dialect cluster consisting of many varieties."
+    },
+    {
+      "name": "Duya",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Idun (Id\u0169) or D\u0169ya, is a poorly attested Plateau language of Nigeria. Its classification is uncertain, but it may be closest to Ashe."
+    },
+    {
+      "name": "Ebughu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ebughu is a Lower Cross River language of Nigeria."
+    },
+    {
+      "name": "Ebu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ebu is a town of Haifeng County in eastern Guangdong province, China, located 6 kilometres (3.7\u00a0mi) from the South China Sea coast and 36\u00a0km (22\u00a0mi) southwest of the county seat and served by China National Highway 324. As of 2011, it has one residential community (\u793e\u533a) and nine villages under its administration."
+    },
+    {
+      "name": "Emai",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ivbiosakon, or Aoma, is an Edoid language of Edo State, Nigeria. The dialect names Ora and Emai are also used for the language."
+    },
+    {
+      "name": "Emhalhe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Okpamheri (Opameri) is an Edoid language of Nigeria. The number of speakers is not known; there were about 30,000 people who spoke Okpamheri (Opameri) language in 1973. The language is moribund today."
+    },
+    {
+      "name": "Engenni",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Engenni (\u1eb8g\u1eb9n\u1eb9) is an Edoid language of Nigeria."
+    },
+    {
+      "name": "Epie",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Epie is part of Delta Edoid languages spoken in Nigeria by the Epie\u2013Atissa people."
+    },
+    {
+      "name": "Eten",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Eten is a Plateau language of Nigeria. The people who speak this language, the Niten are found in the town of Ganawuri in Plateau State."
+    },
+    {
+      "name": "Etung",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Jagham language, Ejagham, also known as Ekoi, is an Ekoid language of Nigeria and Cameroon spoken by the Ekoi people. The E- in Ejagham represents the class prefix for \"language\", analogous to the Bantu ki- in KiSwahili"
+    },
+    {
+      "name": "Fali",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Fali may refer to:"
+    },
+    {
+      "name": "Fyam",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Pyem is a Plateau language of Nigeria. It is spoken by the people of Pyem Chiefdom with headquarters in Gindiri. Pyem is one of the indigenous languages spoken in Mangu LGA, Plateau State, Nigeria."
+    },
+    {
+      "name": "Gade",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gade (Gad) is an independent Gadoid language of Nigeria. Glottolog 4.7 (2022) classifies it as an independent branch of Benue-Congo rather than as a Nupoid language of the Gade people."
+    },
+    {
+      "name": "Gamo-Ningi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gamo (Buta) and Ningi are an apparently extinct Kainji dialect cluster of Nigeria."
+    },
+    {
+      "name": "Ganawuri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Eten is a Plateau language of Nigeria. The people who speak this language, the Niten are found in the town of Ganawuri in Plateau State."
+    },
+    {
+      "name": "Gera",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gera is an Afro-Asiatic language spoken in Nigeria. Speakers are shifting to Hausa. Speakers refer to themselves as Fyandigeri."
+    },
+    {
+      "name": "Geruma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Geruma is an Afro-Asiatic language spoken in Nigeria. Dialects include Duurum and Sum. Speakers are shifting to Hausa."
+    },
+    {
+      "name": "Gokana",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gokana (G\u00f2k\u00e1n\u00e0) is an Ogoni language spoken by some 130,000 people in Rivers State, Nigeria."
+    },
+    {
+      "name": "Gongola",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gongola State is a former administrative division of Nigeria. It was created on 3 February 1976 from the Adamawa and Sardauna Provinces of North State, together with the Wukari Division of the then Benue-Plateau State. It existed until 27 August 1991, when it was divided into two states - Adamawa and Taraba. Its capital city was Yola."
+    },
+    {
+      "name": "Gonja",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Gonja language, properly called Ngbanya or Ngbanyito, is a North Guang language spoken by an estimated 230,000 people, almost all of whom are of the Gonja ethnic group of northern Ghana. Related to Guang languages in the south of Ghana, it is spoken by about a third of the population in the northern region. The Brong-Ahafo and Volta regions lie to the south of the Gonja-speaking area, while Dagombas, Mamprussis and Walas are to the north. Its dialects are Gonja and Choruba."
+    },
+    {
+      "name": "Gude",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gude is an Afro-Asiatic language spoken in Nigeria in Adamawa State in Mubi South LGA and in Borno State in some parts of Askira-Uba LGA. It is also spoken in neighboring Cameroon. Different dialects are spoken in Nigeria and Cameroon."
+    },
+    {
+      "name": "Guruntum",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Guruntum is a Chadic language spoken in Bauchi and Alkaleri LGAs, Bauchi State, Nigeria. In 1993 it was spoken by about 15,000 people."
+    },
+    {
+      "name": "Gusiri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Gwa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Gwa is one of the Bantu languages spoken in Nigeria."
+    },
+    {
+      "name": "Gwari Central",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Gwari North",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Gwari South",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Gwom",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Gwoza",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lamang (Laamang) is an Afro-Asiatic language cluster of Nigeria. Blench (2006) classifies the Woga variety as a separate language."
+    },
+    {
+      "name": "Higi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kamwe is a Chadic language native to Adamawa State and Borno State of Nigeria as well as to North-Western Cameroon."
+    },
+    {
+      "name": "Holma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Holma is an extinct Afro-Asiatic language formerly spoken in Nigeria in Adamawa State, near the Cameroon border. Speakers switched to Nigerian Fulfulde."
+    },
+    {
+      "name": "Ibani",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kalabari is an Ijo language of Nigeria spoken in Rivers State and Bayelsa State by the Awome people. Its three dialects are mutually intelligible. The Kalabari dialect is one of the best-documented varieties of Ijo, and as such is frequently used as the prime example of Ijo in linguistic literature."
+    },
+    {
+      "name": "Ichen",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Izere is a dialect continuum of Plateau languages in Nigeria. According to Blench (2008), it is four languages, though Ethnologue does not distinguish NW and NE Izere. The Cen and Ganang varieties are spoken by only 2000 each. Cen has added Berom noun-class prefixes and consonant alternation to an Izere base."
+    },
+    {
+      "name": "Igbira",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ebira is an Atlantic\u2013Congo language spoken by around 2 million people in middle belt Nigeria. It is the most divergent language with the central known as Okene."
+    },
+    {
+      "name": "Igede",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Igede is a language spoken in Lower Benue State and Cross River State, Nigeria, by 461,000 people. Igede is a tripartite referring as well to the \"people\" and the \"igede land\" that is occupied by the Igede people."
+    },
+    {
+      "name": "Ika",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "There are two unrelated languages named Ika:Ika language (Colombia), also known as Arhuaco\nIka language (Nigeria), a language in Delta State, Nigeria, spoken by the Ika people"
+    },
+    {
+      "name": "Ikom",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ikom is an Upper Cross River language of Nigeria. There are three varieties, Okuni, Lulumo (Olulumo) and Ikom. Ikom is spoken by 80%. The language can also be known by a combination of the names of two or three varieties, including Lulumo-Ikom (Olulumo-Ikom)."
+    },
+    {
+      "name": "Ikulu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Kulu language (Ikulu) also known as Ankulu or Ikolu, is a Plateau language of Nigeria. It is spoken by the Bakulu, found in the Zangon Kataf, Kachia and Kauru Local Government Areas of Kaduna State."
+    },
+    {
+      "name": "Irigwe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Rigwe language, Nkarigwe, is a Plateau language of Nigeria spoken by the Irigwe people mainly found in Bassa Local Government Area of Plateau State."
+    },
+    {
+      "name": "Isu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Isu is a Grassfields Bantu language of Cameroon."
+    },
+    {
+      "name": "Izere",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Izere is a dialect continuum of Plateau languages in Nigeria. According to Blench (2008), it is four languages, though Ethnologue does not distinguish NW and NE Izere. The Cen and Ganang varieties are spoken by only 2000 each. Cen has added Berom noun-class prefixes and consonant alternation to an Izere base."
+    },
+    {
+      "name": "Jaba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Hyam is a regionally important linguistic cluster of Plateau languages in Nigeria. Hyam of Nok is the prestige dialect. Writing the sociolinguistics of Hyam, Blench treats Sait, and Dzar as distinct varieties, and notes that Yat and Ankung may be viewed as separate languages, however, Hayab (2016) presents a differing opinion arguing that it is Ankung, a language called Iduya, that is not mutually intelligible to Hyam. Meanwhile, Hyam, which is spoken by the Ham people of Nigeria, popularly known as 'Jaba' in a recent study by Philip Hayab, a native of the area and a linguist who carried out in-depth research into the language, reveals that 'Jaba' has a Hausa etymology and is derogatory and should be discarded."
+    },
+    {
+      "name": "Jibu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jibu is a Jukunoid language spoken in the Taraba State of Nigeria by 30,000 people."
+    },
+    {
+      "name": "Jimi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jimi may refer to:Jimi language (Cameroon)\nJimi language (Nigeria)\nJimi languages\nJimi system, administration system of ancient China\nJimi River, in Papua New Guinea\nJimi Valley, in Papua New Guinea\nJimi District, in Papua New Guinea\nJimi Rural LLG, in Papua New Guinea\n\"Jimi\", a song by Beastie Boys from their 1994 album, Some Old Bullshit\nA waist-cloth traditionally worn by Bharwad women in India\nDendropsophus jimi, a species of frog\nLulu and Jimi, a 2009 German drama film\nParotocinclus jimi, a species of catfish\nRhinella jimi, a species of toad\nSyncope jimi, a species of frog"
+    },
+    {
+      "name": "Jira",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jira may refer to:Jira \nJira (software), a bug-tracking, issue-tracking and project-management software application\nJira (Toho) or Zilla, a fictional giant dinosaur-like monster\nJapan Robot Association or Japan Industrial Robot Association\nLa Jira, a festival celebrated in some areas of Spain, such as Ovi\u00f1ana\nJira or zira, cumin in Indian cuisine\nJira water, a drink made from cumin"
+    },
+    {
+      "name": "Jju",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jju is the native language of the Bajju people of Kaduna State in central Nigeria. As of 1988, there were approximately 300,000 speakers. Jju is one of the Southern Kaduna languages. Although usually listed separately from the Tyap cluster, Jju's separation, according to Blench R.M. (2018), seems to be increasingly ethnic rather than a linguistic reality."
+    },
+    {
+      "name": "Kabba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kaba (Kabba), or Kabba of Gor\u00e9, is a language of the Sara people in Central African Republic and Chad, with around 100,000 speakers."
+    },
+    {
+      "name": "Kaje",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jju is the native language of the Bajju people of Kaduna State in central Nigeria. As of 1988, there were approximately 300,000 speakers. Jju is one of the Southern Kaduna languages. Although usually listed separately from the Tyap cluster, Jju's separation, according to Blench R.M. (2018), seems to be increasingly ethnic rather than a linguistic reality."
+    },
+    {
+      "name": "Kaje North",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Kaje South",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Kakanda",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kakanda is a Nupoid language of Nigeria. Kakanda is spoken in and around Kupa and Eggan. There are scattered villages stretching from the Niger-Benue confluence to as far as Muregi. There are at least 10,000 people. It is most closely related to Gupa and Kupa, although there are also some similarities with Ebira."
+    },
+    {
+      "name": "Kambari",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Kambari or Kamberi languages are a cluster of Kainji languages spoken in northwestern Nigeria."
+    },
+    {
+      "name": "Kamo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kamo is a Savannas language of Gombe State, eastern Nigeria. Their original settlement was on Kamo Hill, but it was abandoned as the speakers gradually moved down into the plains during the 20th century."
+    },
+    {
+      "name": "Kamuku",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Cinda-Regi language is a language complex of Nigeria belonging to the Kamuku branch of Kainji languages."
+    },
+    {
+      "name": "Karekare",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Karai-karai is a language spoken in West Africa, most prominently North eastern Nigeria. The number of speakers of Karai-karai is estimated between 1,500,000 and 1,800,000 million, primarily spoken by the ethnic Karai-Karai people. It is an Afro-Asiatic language spoken principally in Nigeria with communities in Bauchi State, Yobe State, Gombe State and other parts of Nigeria. Many Karai-karai words share a common origin with the Northwest Semitic languages of Hebrew and Arabic. The Karai-karai language is most closely related to the Ngamo and Bole languages which are both considered derivatives of the Karai-karai language."
+    },
+    {
+      "name": "Kariya",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kariya or Vinah\u0259, is an Afroasiatic language spoken in a cluster of villages near the Stone Age archaeological site of Kariya Wuro in Ganjuwa LGA, Bauchi State, Nigeria. The ethnic group is known as W\u00ec\u00ech\u0259\u0301."
+    },
+    {
+      "name": "Kashimawa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Katung",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Kebi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "K\u00e9bi is a village in north-western Ivory Coast. It is in the sub-prefecture of Boundiali, Boundiali Department, Bagou\u00e9 Region, Savanes District."
+    },
+    {
+      "name": "Keffi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Keffi Local Government Area and a traditional and commercial town in Nasarawa State, north central Nigeria. Its headquarters are in the town of Keffi. Keffi is 50 kilometers from Abuja. Nasarawa State university is located along the Keffi-Akwanga expressway."
+    },
+    {
+      "name": "Khana",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Khana (Kana), or Ogoni, is the prestige variety of the Ogoni languages of Rivers State, Nigeria. It is the lingua franca of speakers of the East Ogoni languages. It is the most dominant of the 5 Ogoni languages Khana, Tee, Gokana, Eleme, Baan spoken in southern part of Rivers State."
+    },
+    {
+      "name": "Kiballo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Vono, also known as Kiwollo (Kiballo), is a nearly extinct Kainji language of Nigeria."
+    },
+    {
+      "name": "Kilba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Huba language, also known as Kilba, is a Chadic language of Nigeria."
+    },
+    {
+      "name": "Kirfi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Giiwo is an Afro-Asiatic language spoken in Nigeria."
+    },
+    {
+      "name": "Koma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Koma language is a language cluster belonging to the Duru branch of Savannas languages of Cameroon. Blench (2004) includes three varieties separated in Ethnologue, Koma Ndera, G\u0268mne, and G\u0268mn\u0268me; within Koma Ndera, speakers of the marginal dialects, Gomnome and Ndera, can scarcely understand one another, though both understand the central dialect, Gomme."
+    },
+    {
+      "name": "Konduga",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Konduga is a community in Borno State, Nigeria and the center of a Local Government Area of the same name about 25\u00a0km to the southeast of Maiduguri, situated on the north bank of the Ngadda River. The population of the Konduga Local Government Area is about 13,400. \nIt is one of the sixteen LGAs that constitute the Borno Emirate, a traditional state located in Borno State, Nigeria. The primary languages are Shuwa Arabic, Kanuri, Mafa and Wandala / Malgwa."
+    },
+    {
+      "name": "Koro",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Koro language may refer to:Koro language (India) \u2014 ISO 639-3 jkr, Sino-Tibetan language\nManus Koro language, also called Lopohan, \u2014 ISO 639-3 kxr, Austronesian language\nKoro language (Vanuatu) \u2014 ISO 639-3 krf, Austronesian language\nKoro, dialect of Maninka language, \u2014 ISO 639-3 kfo, Manding language\nKoro, ethnic name for a group of Plateau languages (Nigeria):\nJili language \u2014 ISO 639-3 mgi\nJijili language \u2014 ISO 639-3 uji\nKoro Nulu language \u2014 ISO 639-3 vkn\nKoro Zuba language \u2014 ISO 639-3 vkz\nKoro Wachi language \u2014 ISO 639-3 bqv"
+    },
+    {
+      "name": "Kpan",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kpan is a Jukunoid language of Taraba State, Nigeria. There are several dialects."
+    },
+    {
+      "name": "Kulung",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kulung may refer to:Kulung people, an ethnic group of Nepal\nKulung language (Nepal), a Sino-Tibetan language of Nepal\nKulung language (Chad), a Chadic language of Chad\nKulung language, a Chadic language of Nigeria\nKulung language (Jarawan), a Bantoid language of Nigeria"
+    },
+    {
+      "name": "Kurama",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Kurama or T'kurmi or Akurmi language is a Kainji language of Nigeria. Kurama speakers are found in the central northern Nigerian states of Kaduna, Bauchi, Borno, Kano, Jigawa and Plateau."
+    },
+    {
+      "name": "Kushi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Goji, also Kushi or Chong'e, is a West Chadic language of Nigeria."
+    },
+    {
+      "name": "Kuturmi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kuturmi, or Ibiro-Ikryo or Ada, is a Plateau language cluster of Kachia LGA, Kaduna State, Nigeria."
+    },
+    {
+      "name": "Lala",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lala language may refer to:Lala language \nLala-Bisa language (Zambia)\nLala language \nLala-Roba language (Nigeria)\nLaalaa language of Senegal\n\n"
+    },
+    {
+      "name": "Lamja",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Daka is one of two languages spoken by the Chamba people in Nigeria, the other being Chamba Leko."
+    },
+    {
+      "name": "Lega",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lega is a Bantu language, or dialect cluster, of the Democratic Republic of the Congo. There are two major varieties, Shabunda Lega, Mwenga Lega. Mwenga Lega, with about 10% of speakers, finds Shabunda difficult to understand."
+    },
+    {
+      "name": "Lere",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lere is an extinct Kainji dialect cluster of Nigeria. The ethnic population was cited as 16,000 in 2000, of whom only a few speak the language. A wordlist from the Takaya dialect can be found under External links."
+    },
+    {
+      "name": "Loko",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Loko, or Landogo, is a Southwestern Mande language spoken by the Loko people, who primarily live in Northern Sierra Leone. There are two known dialects, Landogo and Logo, which are mutually intelligible. Ethnic Loko outnumber native Loko speakers due to the linguistic encroachment of Temne and Krio and urbanization to Freetown, where Loko is internally and externally seen as a low-prestige language."
+    },
+    {
+      "name": "Lukpa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Lukpa is a Gur language spoken in Benin and Togo. It is spoken by the Yoa-Lokpa people."
+    },
+    {
+      "name": "Maaka",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Maaka is an Afro-Asiatic language spoken in the Yobe State in North-Eastern Nigeria. As of 1993, it was spoken by approximately 10,000 people."
+    },
+    {
+      "name": "Mada",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mada is a Plateau language of Nigeria and is a regionally important language spoken in Nasarawa and southern Kaduna States of the Middle Belt, Nigeria, with many dialects. It is a highly tonal language. A translation of the New Testament into the language was finished in 1999. The Nunku dialect has been identified to be a dialect of Mada rather than of Gbantu."
+    },
+    {
+      "name": "Maghavul",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Mak",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Mak language is a Kam\u2013Sui language spoken in Libo County, Qiannan Prefecture, Guizhou, China. It is spoken mainly in the four townships of Yangfeng, Fangcun (\u65b9\u6751), Jialiang (\u7532\u826f), and Diwo (\u5730\u83aa) in Jialiang District (\u7532\u826f), Libo County. Mak speakers can also be found in Dushan County. Mak is spoken alongside Ai-Cham and Bouyei. The Mak, also called Mojia (\u83ab\u5bb6) in Chinese, are officially classified as Bouyei by the Chinese government."
+    },
+    {
+      "name": "Malabu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bata (Gbwata) is an Afro-Asiatic language spoken in Nigeria in Adamawa State in the Numan, Song, Fufore and Jimeta gire Yola maiha Demsa lamorde LGAs, and in Cameroon in North Province along the border with Nigeria. Dialects are Demsa, Garoua, Jirai, Kobotachi, Malabu, Ndeewe, Ribaw, Wadi, and Zumu (Jimo). It is often considered the same language as Bacama."
+    },
+    {
+      "name": "Malgwa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Wandala, also known as Mandara or Mura', is a language in the Chadic branch of the Afro-Asiatic language family, spoken in Cameroon and Nigeria."
+    },
+    {
+      "name": "Mandara",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mandara, also known as Tabar, is an Austronesian language spoken on the Tabar Group of islands, New Ireland Province, Papua New Guinea. Three dialects have been identified, Simberi, Tatau and Tabar, corresponding to the three main islands in the group.\nRecently, a written form of Mandara has been made by a Korean missionary. So far, about 3,000 people are literate in this form of Mandara, and a Bible has been published in it as well."
+    },
+    {
+      "name": "Mang",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "M\u1ea3ng is an Austroasiatic language of Vietnam, China, and Laos. It is spoken mainly in Lai Ch\u00e2u Province, Vietnam and across the border in Jinping County, China. It was first documented only in 1974."
+    },
+    {
+      "name": "Mashi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mashi (Kamaxi), or Kwandu, is a Bantu language of Zambia and Angola. It was assigned by Guthrie to Bantu group K.30, which Pfouts (2003) established as part of the Kavango\u2013Southwest branch of Bantu. Though not specifically addressed, Mashi may be in that family as well."
+    },
+    {
+      "name": "Mbat",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Jarawa is the most populous of the Jarawan languages of northern Nigeria. It is a dialect cluster consisting of many varieties."
+    },
+    {
+      "name": "Mbembe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mbembe is a Cross River language of Nigeria. Odut, a divergent variety spoken in a village far South of the rest of Mbembe, had 20 speakers in 1980 and may be extinct."
+    },
+    {
+      "name": "Mbula",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mbula is an Austronesian language spoken by around 2,500 people on Umboi Island and Sakar Island in the Morobe Province of Papua New Guinea. Its basic word order is subject\u2013verb\u2013object; it has a nominative\u2013accusative case-marking strategy."
+    },
+    {
+      "name": "Mbube-east",
+      "type": "indigenous",
+      "otherNames": [
+        "Obe"
+      ],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Mbube-west",
+      "type": "indigenous",
+      "otherNames": [
+        "Mbe"
+      ],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Mbo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mbo may refer to:Mbo language (Cameroon), a language spoken in Cameroon\nMbo language (Congo), spoken by the Mbo people\nMbo language (Zambia), a Bantu language of Zambia\nMbo\u2019 language, a Grassfields language of Cameroon\nMbo language (Sino-Tibetan), an unclassified Sino-Tibetan language of Tibet"
+    },
+    {
+      "name": "Miya",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Miya (Miyawa) is a Chadic language of the Afro-Asiatic language family spoken in Bauchi State, Nigeria. It is also referred to as \"v\u04d9\u0301na m\u03afy\" translating to \"mouth of miy\". There are approximately 5,000 speakers of Miya. It is related to languages such as Hausa, which the Miya people sometimes borrow from."
+    },
+    {
+      "name": "Moloko",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Moloko (M\u0259lokwo) is an Afro-Asiatic language spoken in northern Cameroon."
+    },
+    {
+      "name": "Montol",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Montol is an Afroasiatic language spoken in Plateau State, Nigeria. Its dialects are Baltap-Lalin and Montol. Roger Blench (2017) uses the name Tel or T\u025b\u025bl for Montol, which is sometimes transcribed as Tehl."
+    },
+    {
+      "name": "Moroa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Moroa is a Chiefdom of the Asholyio people and a village in Kaura Local Government Area of southern Kaduna state in the Middle Belt region of Nigeria."
+    },
+    {
+      "name": "Mvanip",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mvanip (Mvano), or Magu, is a minor Mambiloid language of Nigeria. Despite the small number of speakers, the use of the language use is vigorous. Ethnologue nevertheless classifies Mvanip as threatened."
+    },
+    {
+      "name": "Mwaghavul",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mwaghavul is an Afro-Asiatic language spoken in Plateau State in central Nigeria and predominantly in Mangu LGA."
+    },
+    {
+      "name": "Ndoro",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ndoola (Ndoro) or Njoyam\u025b in Cameroon is a Bantoid language of Nigeria, with several thousand speakers in Cameroon. It is either among or related to the Mambiloid languages."
+    },
+    {
+      "name": "Ngamo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngamo is an Afro-Asiatic language spoken in Nigeria. The native Ngamo language has two major dialects, viz, Gudi Ngamo and Yaya Ngamo. These dialects are spoken by the various clans both within and outside Gadaka."
+    },
+    {
+      "name": "Ngas",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngas, or Angas, is an Afro-Asiatic language spoken in Plateau State, Nigeria. The language has two dialects: Hill Angas and Plain Angas. Ngas is one of the major languages in Plateau State. The 1952 census puts it as the largest ethnic group in Plateau State. Retired General Yakubu Gowon is a prominent Nigerian who is of Ngas ethnicity."
+    },
+    {
+      "name": "Ngizim",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngizim is a Chadic language spoken by the Ngizim people in Yobe State, Nigeria."
+    },
+    {
+      "name": "Ngoshie",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngoshie is a Southern Bantoid language of Cameroon."
+    },
+    {
+      "name": "Ngwo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ngwo (Ngw\u0254) is a Southern Bantoid language of Cameroon. The Konda and Basa varieties are perhaps divergent enough to be considered distinct languages."
+    },
+    {
+      "name": "Njerep",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Njerep (Njerup) is a Mambiloid language spoken in the Adamawa Region of Cameroon. Njerep is almost completely extinct, with only 4 people who speak it at home. Though word lists and grammatical information have been collected from these people, the information remains fragmented."
+    },
+    {
+      "name": "Nkari",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ibuoro is an Ibibio-Efik language of Nigeria. Its dialects are Ibuoro proper, Ito, Itu Mbon Uzo and Nkari."
+    },
+    {
+      "name": "Nkim",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Nkem-Nkum, or Isibiri, is an Ekoid language of Nigeria. There are two somewhat distinct dialects, Nkem (Nkim) and Nkum."
+    },
+    {
+      "name": "Noma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Noma, NoMa, or NOMA may refer to:"
+    },
+    {
+      "name": "Nungu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Nungu is a Plateau language of Nigeria. It divides into two dialects, Gudi and Rinde."
+    },
+    {
+      "name": "Nyankpa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Nyankpa or Yeskwa (nyankp\u00e1) is a Nasarawa and Kaduna Language of Nigeria. It sometimes appears in the literature as Nyenkpa, which is a dialect."
+    },
+    {
+      "name": "Obanliku",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Obanliku is a Bendi language of Nigeria. There are five dialects or varieties: Bisu, Busi, Bishiri, Basang and Bebi."
+    },
+    {
+      "name": "Obolo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Obolo is a major Cross River language of Nigeria. It is the most divergent language in the Lower Cross (LC) subgroup of Cross River, which is a branch of Benue-Congo. Obolo is the indigenous name of a community in the eastern Delta of the River Niger, better known as Andoni. Obolo refers to the people, the language as well as the land. It is an agglutinative, an SVO and a tonal language."
+    },
+    {
+      "name": "Odut",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mbembe is a Cross River language of Nigeria. Odut, a divergent variety spoken in a village far South of the rest of Mbembe, had 20 speakers in 1980 and may be extinct."
+    },
+    {
+      "name": "Ogba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ogba is an Igboid language spoken by Ogba people of Nigeria mostly in River State. They are part of the Ogba/ Egbema/Ndoni Local Government Area in Rivers State. The king is referred to as the Eze-ogba and was politically influenced to change the title as 'Oba' just as the Benin's refer to theirs. Annually they celebrate the 'Egwu ogba' festival. The largest festival in the Egi land."
+    },
+    {
+      "name": "Ogbah",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ogba is an Igboid language spoken by Ogba people of Nigeria mostly in River State. They are part of the Ogba/ Egbema/Ndoni Local Government Area in Rivers State. The king is referred to as the Eze-ogba and was politically influenced to change the title as 'Oba' just as the Benin's refer to theirs. Annually they celebrate the 'Egwu ogba' festival. The largest festival in the Egi land."
+    },
+    {
+      "name": "Ogbia",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ogbia is the most spoken Central Delta language of Nigeria. It is spoken by over 200,000 people."
+    },
+    {
+      "name": "Ogoni",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Ogoni languages, or Kegboid languages, are the five languages of the Ogoni people of Rivers State, Nigeria."
+    },
+    {
+      "name": "Okrika",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kalabari is an Ijo language of Nigeria spoken in Rivers State and Bayelsa State by the Awome people. Its three dialects are mutually intelligible. The Kalabari dialect is one of the best-documented varieties of Ijo, and as such is frequently used as the prime example of Ijo in linguistic literature."
+    },
+    {
+      "name": "Olulumo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ikom is an Upper Cross River language of Nigeria. There are three varieties, Okuni, Lulumo (Olulumo) and Ikom. Ikom is spoken by 80%. The language can also be known by a combination of the names of two or three varieties, including Lulumo-Ikom (Olulumo-Ikom)."
+    },
+    {
+      "name": "Omagua",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Omagua is a Tupi-Guarani language closely related to Cocama, belonging to the Group III subgroup of the Tup\u00ed-Guaran\u00ed family, according to Aryon Rodrigues' classification of the family."
+    },
+    {
+      "name": "Oring",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Orring (Korring) is an Upper Cross River language spoken by the Orring people of Nigeria. Korring language is spoken by the Orring people who are found in Benue, Cross River and Ebonyi states of Nigeria."
+    },
+    {
+      "name": "Orok",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Uilta is a Tungusic language spoken in the Poronaysky and Nogliksky Administrative Divisions of Sakhalin Oblast, in the Russian Federation, by the Uilta people. The northern Uilta who live along the river of Tym\u2019 and around the village of Val have reindeer herding as one of their traditional occupations. The southern Uilta live along the Poronay near the city of Poronaysk. The two dialects come from the northern and eastern groups, however, they have very few differences."
+    },
+    {
+      "name": "Oshimili",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Owe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Owe is a surname or given name, a spelling variation of Ove. Notable people with the name include:"
+    },
+    {
+      "name": "Owerri",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Owerri is the capital city of Imo State in Nigeria, set in the heart of Igboland. It is also the state's largest city, followed by Orlu, Okigwe and Ohaji/Egbema. Owerri consists of three Local Government Areas namely Owerri Municipal, Owerri North and Owerri West. It has an estimated population of 1,401,873 as of 2016 and is approximately 551.00 square kilometres (212.743\u00a0sq\u00a0mi) in area combining the 3 local government making up Owerri. Owerri is bordered by the Otamiri River to the east and the Nworie River to the south. The Owerri Slogan is Heartland. It is also called the Las Vegas of Africa, due to the night life of the city and the numerous hotels, casino and leisure parks all over the city."
+    },
+    {
+      "name": "Pa'a",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Pa\u02bca, also known as Afa (Afawa) or Fucaka (autonym), is an Afro-Asiatic language spoken in Bauchi State, Nigeria."
+    },
+    {
+      "name": "Panyam",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Mak, or LeeMak, is an Adamawa language of Nigeria, one of several spoken by the Bikwin people. The two dialects, Panya and Zoo (Zo), are rather divergent, and might be considered distinct languages."
+    },
+    {
+      "name": "Pero",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Pero is a West Chadic language of Nigeria."
+    },
+    {
+      "name": "Piti",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Piti is a minor Kainji language of Kaduna State, Nigeria. Bishi speakers live in at least 26 villages."
+    },
+    {
+      "name": "Polci",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Polci is an Afro-Asiatic language of Bauchi State, Nigeria. It is part of the Barawa cluster, which is in turn part of the West Chadic language family."
+    },
+    {
+      "name": "Pyem",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Pyem is a Plateau language of Nigeria. It is spoken by the people of Pyem Chiefdom with headquarters in Gindiri. Pyem is one of the indigenous languages spoken in Mangu LGA, Plateau State, Nigeria."
+    },
+    {
+      "name": "Reshe",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Reshe is the most divergent of the Kainji languages of Nigeria. It is spoken on the northern and southern sides of Kainji Lake. It is spoken in Yauri LGA, Kebbi State, and in Borgu LGA, Niger State."
+    },
+    {
+      "name": "Rogo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Rogo is a Kainji language of Nigeria. It is spoken around the town of Ucanja in the Rafi and Mariga Local Government Areas of Niger State, as well as the Birnin Gwari LGA of neighbouring Kaduna State."
+    },
+    {
+      "name": "Ron",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ron is an Afro-Asiatic language cluster spoken in Plateau State, Nigeria. Dialects include Bokkos, Daffo-Mbar-Butura, Monguna/Manguna (Shagau),. Blench (2006) considers these to be separate languages."
+    },
+    {
+      "name": "Rukuba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Ce (Che) language, Kuce (Kuche), is a regionally important Plateau language of Nigeria. It is also known by the name of its native district in Plateau State, Rukuba."
+    },
+    {
+      "name": "Samo",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Samo language may refer to:Samo language (Burkina)\nSamo language \n\n"
+    },
+    {
+      "name": "Sanga",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Sanga language may refer to:Sanga language (Nigeria), a language of Nigeria\nSanga language (Bantu), a language of the Democratic Republic of Congo\n\n"
+    },
+    {
+      "name": "Sankara",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Sankara can refer to:"
+    },
+    {
+      "name": "Shanga",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Shanga is a Mande language of Nigeria."
+    },
+    {
+      "name": "Sheni",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ziriya (Jiriya) and Sheni (Shaini) constitute a Kainji language of Nigeria. They are geographically but perhaps not linguistically distinct."
+    },
+    {
+      "name": "Shiroro",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Shiroro is a Local Government Area in Niger State, Nigeria. Its headquarters is in the town of Kuta. It has an area of 5,015 square kilometres (1,936\u00a0sq\u00a0mi) and a population of 235,404 at the 2006 census. The postal code of the area is 921."
+    },
+    {
+      "name": "Shuwa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Shuwa (Shoobo), or Pianga (Pyaang), once considered a dialect of Bushong, is a Bantu language of Kasai-Oriental Province, Democratic Republic of the Congo."
+    },
+    {
+      "name": "Sura",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Sura language may refer to:Mwaghavul language (Nigeria)\nSurjapuri language (India)\nTatuyo language (Colombia)\n\n"
+    },
+    {
+      "name": "Takwane",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Makhuwa or Mozambican is the primary Bantu language of northern Mozambique. It is spoken by roughly 5.8 million Makua people, who live north of the Zambezi River, particularly in Nampula Province, which is virtually entirely ethnically Makua. It is the most widely spoken indigenous language of Mozambique."
+    },
+    {
+      "name": "Tangale",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tangale (Tangle) is a West Chadic language spoken in Northern region of Nigeria. The vast majority of the native speakers are found across Akko, Billiri, Kaltungo and Shongom Local Government Area of Gombe State Nigeria."
+    },
+    {
+      "name": "Tarok",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tarok, also known as Yergama or Appa is a language spoken by around 520,000 people primarily in the southeast of Nigeria's Plateau State, where it serves as a local lingua franca. Tarok is a member of the Plateau group of the Atlantic\u2013Congo family."
+    },
+    {
+      "name": "Tera",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tera is a Chadic dialect cluster spoken in north-eastern Nigeria in the north and eastern parts of Gombe State and Borno State. Blench (2006) believes Pidlimdi (Hinna) dialect is a separate language."
+    },
+    {
+      "name": "Teshenawa",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Teshenawa (Teshenanchi) is an extinct Afro-Asiatic language formerly spoken in Teshena town of Kafin Hausa LGA, Jigawa State, Nigeria. It was closely related to the also-extinct Auyokawa and still-living Bade."
+    },
+    {
+      "name": "Tita",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tita or \"Hoai Petel\" is an unclassified Benue\u2013Congo language of Nigeria., it is mainly spoken in the states of Taraba and Plateau."
+    },
+    {
+      "name": "Tsam",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tsam may refer to:Cham Albanians, a sub-group of Albanians in the northwestern Greece\nCham dance, named tsam (\u0426\u0430\u043c) in Mongolian\nHerzl Yankl Tsam (1835\u20131915), Jewish cantonist in the Russian Empire"
+    },
+    {
+      "name": "Tsikimba",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Kimba languages (Tsikimba or the Kambari II languages) are a group of Kainji languages of Nigeria spoken by the Kambari people. The languages are Kimba (Tsikimba), Gaushi (Agaushi), and Wenci (Ngwunci)."
+    },
+    {
+      "name": "Tsishingini",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Shingini language is a Kainji language of Nigeria spoken by the Kambari people. Its two dialects are Tsishingini and Cishingini (Chishingini)."
+    },
+    {
+      "name": "Tula",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tula is one of the Savanna languages of Gombe State, northeastern Nigeria."
+    },
+    {
+      "name": "Turi",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Turi is an endangered Austroasiatic language of India that belongs to the Kherwarian Munda group. Grierson (1906) described that Turi is similar to both Mundari and Santali. It is spoken by only half a percent of ethnic Turi, the rest having shifted to Sadri in Jharkhand, Mundari in West Bengal, and Odia in Odisha. The Turi are classified as a Scheduled Caste in Jharkhand."
+    },
+    {
+      "name": "Ufia",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Orring (Korring) is an Upper Cross River language spoken by the Orring people of Nigeria. Korring language is spoken by the Orring people who are found in Benue, Cross River and Ebonyi states of Nigeria."
+    },
+    {
+      "name": "Ukelle",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Kele (Kukelle) is an Upper Cross River language of Nigeria. This language is mostly spoken in Yala Local Government area of Cross River State. Ukelle have North and South Ukelle with slight differences between their intonation."
+    },
+    {
+      "name": "Ukwuani",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ukwuani, Aboh, and Ndoni are a cluster of Igboid languages of Nigeria."
+    },
+    {
+      "name": "Uneme",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Uneme is an Edoid language and sub-saharan group of Nigeria located in the Edo State."
+    },
+    {
+      "name": "Ura",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Ura may refer to:"
+    },
+    {
+      "name": "Utonkon",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Utonkon is a district and a village in Ado Local Government Area, Benue State, Nigeria. It has a postal code of 973110."
+    },
+    {
+      "name": "Uwandu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Vere",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "The Gw\u00e8ri or Vere language, also known as Kobo or Mom Jango, is a member of the Duru branch of Savanna languages. It is spoken across the northern Nigerian\u2013Cameroonian border."
+    },
+    {
+      "name": "Waja",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Waja is a Savannas language of North eastern Nigeria. Dialectical differences between Deruwo and Waja proper are slight."
+    },
+    {
+      "name": "Wannu",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Wannu, or Abinsi after the district in which it is spoken, is a Jukunoid language of Nigeria. It belongs to the Jukun Wapan (Kororofa) language cluster."
+    },
+    {
+      "name": "Warji",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Warji (Warjawa) or Sirzakwai is an Afro-Asiatic language spoken in Bauchi State, Nigeria. Speakers are shifting to Hausa."
+    },
+    {
+      "name": "Wurkum",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "No summary found; please supply manually."
+    },
+    {
+      "name": "Yala",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yala (Iyala) is an Idomoid language of Ogoja, Nigeria. Blench (2019) lists dialects as Ikom, Obubra, and Ogoja."
+    },
+    {
+      "name": "Yandang",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yendang is a member of the Leko\u2013Nimbari group of Savanna languages. It is spoken in northeastern Nigeria. Dialects are Kuseki, Yofo, Poli."
+    },
+    {
+      "name": "Yangkam",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yangkam (Yankam), or Bashar (Basherawa), is a moribund Plateau language of Nigeria. It is located to the west of Bashar town in Plateau State."
+    },
+    {
+      "name": "Yergam",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Tarok, also known as Yergama or Appa is a language spoken by around 520,000 people primarily in the southeast of Nigeria's Plateau State, where it serves as a local lingua franca. Tarok is a member of the Plateau group of the Atlantic\u2013Congo family."
+    },
+    {
+      "name": "Yoruboid",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Yoruboid is a language family composed of the Igala group of dialects spoken in south central Nigeria, and the Edekiri languages subdivided into the Ede group spoken in a band across Togo, Ghana, Benin and southern Nigeria, and the Itsekiri group of the Warri Kingdom in the northwestern Niger-Delta."
+    },
+    {
+      "name": "Yungur",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Bena is an Adamawa language of Nigeria."
+    },
+    {
+      "name": "Zaar",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Saya is a Chadic dialect cluster of Nigeria."
+    },
+    {
+      "name": "Zangwal",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Zangwal is an endangered language spoken in Bauchi State, Nigeria. There were approximately 100 remaining speakers in 1993."
+    },
+    {
+      "name": "Zarma",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Zarma is one of the Songhay languages. It is the leading indigenous language of the southwestern lobe of the West African nation of Niger, where the Niger River flows and the capital city, Niamey, is located. Zarma is the second-most common language in the country, after Hausa, which is spoken in south-central Niger. With over 6 million speakers, Zarma is the most widely spoken Songhay language."
+    },
+    {
+      "name": "Zul",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Polci is an Afro-Asiatic language of Bauchi State, Nigeria. It is part of the Barawa cluster, which is in turn part of the West Chadic language family."
+    },
+    {
+      "name": "Zumbun",
+      "type": "indigenous",
+      "otherNames": [],
+      "info": "Zumbun is an Afro-Asiatic language spoken in Bauchi State, Nigeria, in Jimbim settlement, Darazo LGA."
+    }
+  ]
+}
