@@ -81,7 +81,7 @@ Check out a few resources that may come in handy when working with NestJS:
 
 ## AI Model Prototype
 
-This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a naive translation model. Languages are loaded from the root `lang.json` file. The translation logic uses examples added via the training API; when no examples are present it merely prefixes the text with the target language.
+This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a naive translation model. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. The translation logic uses examples added via the training API; it attempts exact matches, falls back to a simple fuzzy search, or prefixes the input when nothing is available.
 
 ### Useful endpoints
 
@@ -90,6 +90,7 @@ This application hosts a simple in-memory translation prototype powered by NestJ
 | GET    | /languages | List all available languages |
 | GET    | /languages/:name | Get metadata for a language |
 | POST   | /training | Add a training example (JSON body) |
+| POST   | /training/batch | Add multiple training examples in one request (array) |
 | GET    | /training | List all training examples |
 | GET    | /training/:source/:target | Examples for a language pair |
 | POST   | /model/translate | Translate text using current training data |
@@ -101,6 +102,25 @@ cd ai-model
 npm install
 npm run start:dev
 ```
+
+### Database setup (optional)
+
+To enable persistence with PostgreSQL and pgvector:
+
+```bash
+# start a local Postgres instance with pgvector enabled
+cd ai-model
+# make sure Docker is running on your machine
+docker-compose up -d
+
+# set DATABASE_URL variable for prisma, e.g. in .env
+# DATABASE_URL="postgresql://prisma:prisma@localhost:5432/ai_model"
+
+npm run prisma:migrate   # creates and applies migration based on schema
+npm run prisma:seed      # load languages from root lang.json
+```
+
+The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
 - Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
 - To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).

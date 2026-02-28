@@ -11,13 +11,13 @@ export class LanguagesController {
   constructor(private readonly languagesService: LanguagesService) {}
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.languagesService.findAll();
   }
 
   @Get(':name')
-  findOne(@Param('name') name: string) {
-    const language = this.languagesService.findOne(name);
+  async findOne(@Param('name') name: string) {
+    const language = await this.languagesService.findOne(name);
     if (!language) {
       throw new NotFoundException('Language not found');
     }

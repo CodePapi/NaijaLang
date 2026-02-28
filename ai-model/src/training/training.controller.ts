@@ -7,23 +7,30 @@ import {
 } from '@nestjs/common';
 import { TrainingService } from './training.service';
 import type { TrainingExample } from './training.service';
+import { CreateTrainingDto } from '../dto/create-training.dto';
 
 @Controller('training')
 export class TrainingController {
   constructor(private readonly trainingService: TrainingService) {}
 
+  // accept array of examples to insert in one call
+  @Post('batch')
+  async addBatch(@Body() examples: CreateTrainingDto[]) {
+    return this.trainingService.addBatch(examples);
+  }
+
   @Post()
-  addExample(@Body() example: TrainingExample) {
+  async addExample(@Body() example: CreateTrainingDto) {
     return this.trainingService.add(example);
   }
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.trainingService.findAll();
   }
 
   @Get(':source/:target')
-  findFor(
+  async findFor(
     @Param('source') source: string,
     @Param('target') target: string,
   ) {
