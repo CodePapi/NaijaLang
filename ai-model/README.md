@@ -81,7 +81,9 @@ Check out a few resources that may come in handy when working with NestJS:
 
 ## AI Model Prototype
 
-This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a naive translation model. Each language now includes a **two‑letter `code`** (e.g. `en` for English, `yo` for Yoruba) which is unique and can be used interchangeably with the name when querying the `/languages/:identifier` endpoint. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. The translation logic uses examples added via the training API; it attempts exact matches, falls back to a simple fuzzy search, or prefixes the input when nothing is available.
+This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a translation model that is **100% self‑contained** (no external AI services are required). Each language now includes a **two‑letter `code`** (e.g. `en` for English, `yo` for Yoruba) which is unique and can be used interchangeably with the name when querying the `/languages/:identifier` endpoint. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. 
+
+The translation logic has been improved with a basic local embedding algorithm — word‑hashing + normalization — so that new examples populate a vector store in PostgreSQL and nearest‑neighbor retrieval is used for queries. Fallbacks still include Levenshtein fuzzy matching and finally a first-example prefix. This design keeps everything on‑device, preserving privacy and making the project easier for contributors to run.
 
 ### Useful endpoints
 
@@ -105,6 +107,10 @@ npm run start:dev
 ```
 
 ### Database setup (optional)
+
+#### Local embeddings
+When training examples are added via the `/training` endpoints, the server automatically computes a simple embedding vector from the source text using an internal word‑hash algorithm, then stores it alongside the record. The `/model/translate` route uses these vectors for a nearest‑neighbor lookup before falling back to fuzzy matching. All of this runs purely inside the application and database — no paid API keys or external models are required.
+
 
 To enable persistence with PostgreSQL and pgvector:
 
@@ -152,6 +158,11 @@ PGHOST_PORT=5433    # used by docker-compose
 ```
 
 You can adjust any of these if your setup differs; the server and docker compose will read from the file.
+
+There are also two handy scripts in the repository:
+
+* `scripts/generate-language-table.js` – rebuilds `LANGUAGE_CODES.md` with names & codes.
+* `scripts/generate-training.js` – produces a simple `training-sample.json` dataset (English→everyone else).  Use this file to bulk load examples with the `/training/batch` endpoint and quickly populate the vector model.
 
 The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
