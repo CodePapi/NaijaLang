@@ -1,0 +1,33 @@
+name: publish-nigeria-languages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'nigeria-languages/**'
+      - '.github/workflows/publish-nigeria-languages.yml'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: |
+          cd nigeria-languages
+          npm ci
+
+      - name: Publish package
+        run: |
+          cd nigeria-languages
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
