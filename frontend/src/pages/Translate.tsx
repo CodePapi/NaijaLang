@@ -15,14 +15,16 @@ export default function Translate() {
   const [text, setText] = React.useState('');
   const [result, setResult] = React.useState('');
 
+  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+
   React.useEffect(() => {
-    fetch('/lang.json')
+    fetch(apiBase + '/lang.json')
       .then(res => res.json())
       .then((data: { languages: Language[] }) =>
          setLanguages(data.languages)
     )
       .catch(err => console.error('could not load languages', err));
-  }, []);
+  }, [apiBase]);
 
   return (
     <div className="max-w-3xl mx-auto">
@@ -68,7 +70,7 @@ export default function Translate() {
               const src = languages.find((l) => l.name === srcLang)?.code || srcLang;
               const tgt = languages.find((l) => l.name === tgtLang)?.code || tgtLang;
               try {
-                const res = await fetch('/model/translate', {
+                const res = await fetch(apiBase + '/model/translate', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ text, sourceLang: src, targetLang: tgt }),

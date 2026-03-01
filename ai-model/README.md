@@ -106,6 +106,15 @@ npm install
 npm run start:dev
 ```
 
+The frontend expects the backend to be reachable at the same origin by default, but you can override it by setting `VITE_API_BASE_URL` when building the frontend. For example:
+
+```bash
+cd frontend
+VITE_API_BASE_URL="http://localhost:3000" npm run build
+```
+
+This will cause the React app to prefix all API calls with the given base URL.
+
 ### Database setup (optional)
 
 #### Local embeddings
