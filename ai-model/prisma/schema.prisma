@@ -24,5 +24,8 @@ model TrainingExample {
   targetLang String   
   source     String   
   target     String   
+  // vector embedding for source text; stored as PostgreSQL float[]
+  embedding  Float[]
+
   createdAt  DateTime @default(now())
 }

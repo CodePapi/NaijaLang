@@ -27,6 +27,8 @@ function levenshtein(a: string, b: string): number {
   return matrix[b.length][a.length];
 }
 
+import { embed as textEmbed, distance as vectorDistance } from '../utils/embedding';
+
 @Injectable()
 export class ModelService {
   constructor(private readonly trainingService: TrainingService) {}
@@ -46,6 +48,21 @@ export class ModelService {
     const exact = examples.find((e) => e.source === text);
     if (exact) {
       return exact.target;
+    }
+
+    // if examples have embeddings, perform vector search
+    const inputEmb = textEmbed(text);
+    let bestVec: { example: any; dist: number } | null = null;
+    for (const e of examples) {
+      if (e.embedding && Array.isArray(e.embedding)) {
+        const dist = vectorDistance(inputEmb, e.embedding);
+        if (!bestVec || dist < bestVec.dist) {
+          bestVec = { example: e, dist };
+        }
+      }
+    }
+    if (bestVec) {
+      return bestVec.example.target;
     }
 
     // fuzzy match by Levenshtein distance
