@@ -18,10 +18,10 @@ export default function Docs() {
   // no fetch needed; languages are part of npm package
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold mb-4">Developer Documentation</h1>
-        <p className="mb-4">
+    <div className="max-w-3xl mx-auto py-6">
+      <article className="prose prose-blue bg-white rounded-lg shadow p-6">
+        <h1>Developer Documentation</h1>
+        <p>
           This section will describe the API endpoints and how to contribute. The web interface
           also includes a <a className="text-blue-600 underline" href="/train">training page</a>
           where examples can be added one‑by‑one or via file upload. Under the hood the list of
@@ -35,13 +35,13 @@ export default function Docs() {
           API requests use the <code>VITE_API_BASE_URL</code> environment variable, which should
           point to the backend (e.g. <code>http://localhost:3000</code> in development).
         </p>
-        <h2 className="text-xl font-semibold mt-6">API Endpoints</h2>
-        <ul className="list-disc ml-5 mt-2 space-y-1">
+        <h2>API Endpoints</h2>
+        <ul>
           <li><code>POST /api/translate</code> - translate text using current examples</li>
           <li><code>POST /api/train</code> - add training examples; can be a single example or a batch array</li>
           <li><code>GET /api/languages</code> - list supported languages</li>
         </ul>
-      </div>
+      </article>
     </div>
   );
 }

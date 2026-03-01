@@ -52,9 +52,12 @@ export default function Train() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold mb-6">Training Interface</h1>
+    <div className="max-w-2xl mx-auto py-6">
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-extrabold mb-4">Training Interface</h1>
+        <p className="text-gray-600 mb-6">
+          Submit parallel source/target examples to help the model learn.
+        </p>
         <div className="space-y-6">
           {/* single-example form */}
           <div className="space-y-4">

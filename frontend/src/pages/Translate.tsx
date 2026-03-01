@@ -22,9 +22,12 @@ export default function Translate() {
   // no need for effect; languages are static
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold mb-6">Translate Languages</h1>
+    <div className="max-w-2xl mx-auto py-6">
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-extrabold mb-4">Translate Languages</h1>
+        <p className="text-gray-600 mb-6">
+          Enter text and select source/target languages to perform a translation.
+        </p>
         {/* source/target selectors, text input, output area */}
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
