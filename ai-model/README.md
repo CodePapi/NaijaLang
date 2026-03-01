@@ -126,7 +126,31 @@ npm run prisma:migrate   # creates and applies migration based on schema
 npm run prisma:seed      # load languages from root lang.json
 ```
 
+**Port conflict warning:** the Nest server listens on port `3000` by default. If another process is already bound to that port you'll see an `EADDRINUSE` error and subsequent requests may return 500 (or hit the wrong service). To fix:
+
+```bash
+# kill whatever is listening
+lsof -iTCP:3000 -sTCP:LISTEN
+kill <pid>
+
+# or run on a different port
+PORT=3001 npm run start:dev
+```
+
+Then try the API endpoints again.
+
 Before running the app you must also have the Postgres adapter installed (`npm install @prisma/adapter-pg`), which is already included in dependencies. The PrismaService constructor uses this adapter when instantiating the client so startup succeeds. It also ensures the underlying pg pool is always given a string password (possibly an empty string) to avoid SASL validation errors when no database URL is configured.
+
+Create a `.env` file in the `ai-model` folder containing at least the following values (defaults are shown):
+
+```dotenv
+DATABASE_URL="postgresql://prisma:prisma@localhost:5433/ai_model"
+PORT=3000
+PRISMA_CLIENT_ENGINE_TYPE=binary
+PGHOST_PORT=5433    # used by docker-compose
+```
+
+You can adjust any of these if your setup differs; the server and docker compose will read from the file.
 
 The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
@@ -134,16 +158,3 @@ The app will automatically connect using the `DATABASE_URL` environment variable
 - To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
 - Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
