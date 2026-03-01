@@ -111,10 +111,14 @@ To enable persistence with PostgreSQL and pgvector:
 # start a local Postgres instance with pgvector enabled
 cd ai-model
 # make sure Docker is running on your machine
+# the compose file now defaults the host port to 5433 to avoid clashes
+# with a typical local Postgres on 5432; override with PGHOST_PORT if
+# you need a different port (e.g. `export PGHOST_PORT=15432`).
 docker-compose up -d
 
 # set DATABASE_URL variable for prisma, e.g. in .env
 # DATABASE_URL="postgresql://prisma:prisma@localhost:5432/ai_model"
+# (adjust host port if you changed PGHOST_PORT above)
 # also ensure Prisma uses the binary engine or a suitable adapter
 # you can export PRISMA_CLIENT_ENGINE_TYPE=binary
 
@@ -122,7 +126,7 @@ npm run prisma:migrate   # creates and applies migration based on schema
 npm run prisma:seed      # load languages from root lang.json
 ```
 
-Before running the app you must also have the Postgres adapter installed (`npm install @prisma/adapter-pg`), which is already included in dependencies. The PrismaService constructor uses this adapter when instantiating the client so startup succeeds.
+Before running the app you must also have the Postgres adapter installed (`npm install @prisma/adapter-pg`), which is already included in dependencies. The PrismaService constructor uses this adapter when instantiating the client so startup succeeds. It also ensures the underlying pg pool is always given a string password (possibly an empty string) to avoid SASL validation errors when no database URL is configured.
 
 The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
