@@ -81,7 +81,7 @@ Check out a few resources that may come in handy when working with NestJS:
 
 ## AI Model Prototype
 
-This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a naive translation model. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. The translation logic uses examples added via the training API; it attempts exact matches, falls back to a simple fuzzy search, or prefixes the input when nothing is available.
+This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a naive translation model. Each language now includes a **two‑letter `code`** (e.g. `en` for English, `yo` for Yoruba) which is unique and can be used interchangeably with the name when querying the `/languages/:identifier` endpoint. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. The translation logic uses examples added via the training API; it attempts exact matches, falls back to a simple fuzzy search, or prefixes the input when nothing is available.
 
 ### Useful endpoints
 
@@ -89,6 +89,7 @@ This application hosts a simple in-memory translation prototype powered by NestJ
 |--------|------|-------------|
 | GET    | /languages | List all available languages |
 | GET    | /languages/:name | Get metadata for a language |
+| GET    | /languages/:code | Get metadata by two‑letter code (same as name lookup) |
 | POST   | /training | Add a training example (JSON body) |
 | POST   | /training/batch | Add multiple training examples in one request (array) |
 | GET    | /training | List all training examples |
