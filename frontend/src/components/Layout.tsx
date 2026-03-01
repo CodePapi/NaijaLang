@@ -9,7 +9,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="fixed top-0 inset-x-0 z-20 bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="flex justify-between items-center px-4 py-4">
           <span className="text-2xl font-bold text-white">NaijaLang</span>
           <nav className="flex flex-wrap justify-end space-x-8">
             <NavLink
