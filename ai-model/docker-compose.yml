@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    # use an image that already bundles the pgvector extension
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: ai_model
+    # expose the container port 5432 on a configurable host port.  The
+    # default is now 5433 to avoid colliding with a local postgres instance
+    # typically listening on 5432. You can still override it via PGHOST_PORT
+    # environment variable if 5433 is also taken.
+    ports:
+      - "${PGHOST_PORT:-5433}:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./prisma/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    # no extra command needed; extension available by default
+
+volumes:
+  db_data:

@@ -1,0 +1,31 @@
+// Prisma schema for AI model project
+
+datasource db {
+  provider = "postgresql"
+  // connection URL is configured via prisma.config.ts or environment for Prisma 7+
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Language {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  // two-letter unique identifier for the language
+  code String @unique
+  type String?
+  info String?
+}
+
+model TrainingExample {
+  id         Int      @id @default(autoincrement())
+  sourceLang String   
+  targetLang String   
+  source     String   
+  target     String   
+  // vector embedding for source text; stored as PostgreSQL float[]
+  embedding  Float[]
+
+  createdAt  DateTime @default(now())
+}
