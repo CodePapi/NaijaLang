@@ -14,20 +14,18 @@ export class PrismaService
 {
   constructor() {
     // Prisma 7 requires adapter or accelerateUrl when using engine type "client".
-    // We'll provide an adapter only if we actually have a DATABASE_URL defined.
-    // Otherwise, let the client start with default options (no db).
-    const url = process.env.DATABASE_URL;
-    if (typeof url === 'string' && url.length > 0) {
-      super({
-        adapter: new PrismaPg({ connectionString: url }),
-      });
-    } else {
-      super({});
-    }
+    // Provide a Postgres adapter unconditionally so instantiation succeeds.
+    super({
+      // use empty config; actual connection string will be provided via
+      // datasource URL at query execution time.
+      adapter: new PrismaPg({}),
+    });
   }
 
   async onModuleInit() {
-    await this.$connect();
+    if (process.env.DATABASE_URL) {
+      await this.$connect();
+    }
   }
 
   async onModuleDestroy() {
