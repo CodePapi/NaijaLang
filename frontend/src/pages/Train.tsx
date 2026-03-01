@@ -1,3 +1,5 @@
+import React from 'react';
+import languagesList from 'nigeria-languages';
 
 interface Language {
   name: string;
@@ -5,7 +7,7 @@ interface Language {
 }
 
 export default function Train() {
-  const [languages, setLanguages] = React.useState<Language[]>([]);
+  const [languages] = React.useState<Language[]>(languagesList as Language[]);
   const [srcLang, setSrcLang] = React.useState<string>('English');
   const [tgtLang, setTgtLang] = React.useState<string>('Nigerian Pidgin');
   const [sourceText, setSourceText] = React.useState('');
@@ -14,12 +16,7 @@ export default function Train() {
 
   const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
-  React.useEffect(() => {
-    fetch(apiBase + '/lang.json')
-      .then(res => res.json())
-      .then((data: { languages: Language[] }) => setLanguages(data.languages))
-      .catch(err => console.error('could not load languages', err));
-  }, [apiBase]);
+  // languages are static; no fetch required
 
   const submitExample = async () => {
     if (!sourceText.trim() || !targetText.trim()) {
@@ -30,7 +27,7 @@ export default function Train() {
     const tgtCode = languages.find(l => l.name === tgtLang)?.code || tgtLang;
 
     try {
-      const res = await fetch('/api/train', {
+      const res = await fetch(apiBase + '/api/train', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -55,57 +52,84 @@ export default function Train() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold mb-6">Training Interface</h1>
+    <div className="max-w-2xl mx-auto py-6">
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-extrabold mb-4">Training Interface</h1>
+        <p className="text-gray-600 mb-6">
+          Submit parallel source/target examples to help the model learn.
+        </p>
         <div className="space-y-6">
           {/* single-example form */}
           <div className="space-y-4">
             <h2 className="text-xl font-semibold">Add Single Example</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <select
-                className="border p-2 rounded w-full"
-                value={srcLang}
-                onChange={e => setSrcLang(e.target.value)}
-              >
-                {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="border p-2 rounded w-full"
-                value={tgtLang}
-                onChange={e => setTgtLang(e.target.value)}
-              >
-                {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
-                  </option>
-                ))}
-              </select>
+              <div>
+                <label htmlFor="trainSrc" className="block text-sm font-medium text-gray-700">
+                  Source language
+                </label>
+                <select
+                  id="trainSrc"
+                  className="mt-1 block w-full border p-2 rounded"
+                  value={srcLang}
+                  onChange={e => setSrcLang(e.target.value)}
+                >
+                  {languages.map(l => (
+                    <option key={l.name} value={l.name}>
+                      {l.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="trainTgt" className="block text-sm font-medium text-gray-700">
+                  Target language
+                </label>
+                <select
+                  id="trainTgt"
+                  className="mt-1 block w-full border p-2 rounded"
+                  value={tgtLang}
+                  onChange={e => setTgtLang(e.target.value)}
+                >
+                  {languages.map(l => (
+                    <option key={l.name} value={l.name}>
+                      {l.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <textarea
-              className="border rounded w-full h-24 p-2"
-              placeholder="Source text"
-              value={sourceText}
-              onChange={e => setSourceText(e.target.value)}
-            />
-            <textarea
-              className="border rounded w-full h-24 p-2"
-              placeholder="Target text"
-              value={targetText}
-              onChange={e => setTargetText(e.target.value)}
-            />
+            <div>
+              <label htmlFor="sourceText" className="block text-sm font-medium text-gray-700">
+                Source text
+              </label>
+              <textarea
+                id="sourceText"
+                className="mt-1 border rounded w-full h-24 p-2"
+                placeholder="Source text"
+                value={sourceText}
+                onChange={e => setSourceText(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="targetText" className="block text-sm font-medium text-gray-700">
+                Target text
+              </label>
+              <textarea
+                id="targetText"
+                className="mt-1 border rounded w-full h-24 p-2"
+                placeholder="Target text"
+                value={targetText}
+                onChange={e => setTargetText(e.target.value)}
+              />
+            </div>
             <button
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded shadow"
               onClick={submitExample}
             >
               Add Example
             </button>
             {message && (
-              <div className="text-sm text-gray-700 mt-2">{message}</div>
+              <div role="status" className="text-sm text-gray-700 mt-2">{message}</div>
             )}
           </div>
 

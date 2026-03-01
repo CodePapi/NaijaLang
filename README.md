@@ -28,6 +28,7 @@ and CI automation.
   cosine similarity and TF‑IDF.
 - **Language support**: seeded with dozens of Nigerian languages and growing.
 - **Training UI**: users can submit real examples and have them stored persistently.
+- **Polished frontend**: pages styled with Tailwind, responsive navigation, and clean typography.
 - **Reusable package**: `nigeria-languages` is now published to npm at
   [npmjs.com/package/nigeria-languages](https://www.npmjs.com/package/nigeria-languages).
 - **CI/CD**: automated tests and package publishing via GitHub Actions.
@@ -37,7 +38,7 @@ and CI automation.
 
 - Improve model quality and performance (currently rudimentary embeddings).
 - Add more robust authentication/authorization to the API.
-- Expand frontend with documentation, bulk training uploads, and user accounts.
+- Expand frontend with documentation, bulk training uploads, user accounts, and further visual refinements.
 - Set up a hosted demo and database migration strategy for production.
 - Broaden language coverage with community contributions.
 
@@ -48,12 +49,29 @@ We welcome help! Here’s how you can get involved:
 1. **Fork the repo** and create a feature branch (`feature/my-change`).
 2. **Run the services locally**:
    - `cd ai-model && npm install && npm run dev` (requires Postgres)
-   - `cd frontend && npm install && npm run dev`
+   - `cd frontend && npm install && npm run dev` (runs on 5175 by default)
    - Optionally `cd backend && npm install && npm run dev` for proxy.
 3. **Write tests** for new features/bug fixes. We use Jest and Supertest.
 4. **Open a pull request** against `main`. Describe your changes and link any
    relevant issues.
 5. Follow the [MIT license](#license) and be respectful in discussions.
+
+### Building & deploying the frontend
+
+The frontend is a standard Vite/React app. To create a production build:
+
+```bash
+cd frontend
+npm run build
+```
+
+The output appears in `frontend/dist` and can be served by any static host
+(such as Netlify, Vercel, GitHub Pages, etc.). Set the `VITE_API_BASE_URL`
+variable at build time to point at your backend.
+
+For the backend and ai-model, you can run the Docker Compose definitions or just
+start them with `npm run start` once dependencies are installed. A hosted
+service will require a proper Postgres database and environment configuration.
 
 ### Reporting issues
 
