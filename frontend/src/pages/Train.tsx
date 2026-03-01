@@ -60,49 +60,73 @@ export default function Train() {
           <div className="space-y-4">
             <h2 className="text-xl font-semibold">Add Single Example</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <select
-                className="border p-2 rounded w-full"
-                value={srcLang}
-                onChange={e => setSrcLang(e.target.value)}
-              >
-                {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="border p-2 rounded w-full"
-                value={tgtLang}
-                onChange={e => setTgtLang(e.target.value)}
-              >
-                {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
-                  </option>
-                ))}
-              </select>
+              <div>
+                <label htmlFor="trainSrc" className="block text-sm font-medium text-gray-700">
+                  Source language
+                </label>
+                <select
+                  id="trainSrc"
+                  className="mt-1 block w-full border p-2 rounded"
+                  value={srcLang}
+                  onChange={e => setSrcLang(e.target.value)}
+                >
+                  {languages.map(l => (
+                    <option key={l.name} value={l.name}>
+                      {l.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="trainTgt" className="block text-sm font-medium text-gray-700">
+                  Target language
+                </label>
+                <select
+                  id="trainTgt"
+                  className="mt-1 block w-full border p-2 rounded"
+                  value={tgtLang}
+                  onChange={e => setTgtLang(e.target.value)}
+                >
+                  {languages.map(l => (
+                    <option key={l.name} value={l.name}>
+                      {l.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <textarea
-              className="border rounded w-full h-24 p-2"
-              placeholder="Source text"
-              value={sourceText}
-              onChange={e => setSourceText(e.target.value)}
-            />
-            <textarea
-              className="border rounded w-full h-24 p-2"
-              placeholder="Target text"
-              value={targetText}
-              onChange={e => setTargetText(e.target.value)}
-            />
+            <div>
+              <label htmlFor="sourceText" className="block text-sm font-medium text-gray-700">
+                Source text
+              </label>
+              <textarea
+                id="sourceText"
+                className="mt-1 border rounded w-full h-24 p-2"
+                placeholder="Source text"
+                value={sourceText}
+                onChange={e => setSourceText(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="targetText" className="block text-sm font-medium text-gray-700">
+                Target text
+              </label>
+              <textarea
+                id="targetText"
+                className="mt-1 border rounded w-full h-24 p-2"
+                placeholder="Target text"
+                value={targetText}
+                onChange={e => setTargetText(e.target.value)}
+              />
+            </div>
             <button
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded shadow"
               onClick={submitExample}
             >
               Add Example
             </button>
             {message && (
-              <div className="text-sm text-gray-700 mt-2">{message}</div>
+              <div role="status" className="text-sm text-gray-700 mt-2">{message}</div>
             )}
           </div>
 
