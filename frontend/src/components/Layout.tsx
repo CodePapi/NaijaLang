@@ -9,8 +9,8 @@ export default function Layout({ children }: LayoutProps) {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md">
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <header className="fixed top-0 inset-x-0 z-20 bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <span className="text-2xl font-bold text-white">NaijaLang</span>
           {/* desktop nav -- always visible on md+ */}
@@ -131,7 +131,9 @@ export default function Layout({ children }: LayoutProps) {
           </nav>
         )}
       </header>
-      <main className="flex-grow container mx-auto px-4 py-6">{children}</main>
+      <main className="flex-grow container mx-auto px-4 pt-24 pb-6">
+        {children}
+      </main>
       <footer className="bg-white border-t">
         <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} NaijaLang. All rights reserved.
