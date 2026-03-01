@@ -31,3 +31,7 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # The npm token used here must be created with
+        # "automation" permissions and configured to bypass 2FA if
+        # the account has two-factor authentication enabled. Otherwise
+        # the publish step will fail with a 403 error.
