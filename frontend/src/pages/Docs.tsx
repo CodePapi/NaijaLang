@@ -13,8 +13,6 @@ export default function Docs() {
     (languagesList as Language[]).length
   );
 
-  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
-
   // no fetch needed; languages are part of npm package
 
   return (

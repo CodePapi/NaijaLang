@@ -10,15 +10,15 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="bg-white shadow">
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <span className="text-2xl font-bold text-blue-600">NaijaLang</span>
+          <span className="text-2xl font-bold text-white">NaijaLang</span>
           {/* desktop nav -- always visible on md+ */}
           <nav className="hidden md:flex space-x-6">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
               }
             >
               Home
@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink
               to="/translate"
               className={({ isActive }) =>
-                `font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
               }
             >
               Translate
@@ -34,7 +34,7 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink
               to="/train"
               className={({ isActive }) =>
-                `font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
               }
             >
               Train
@@ -42,7 +42,7 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink
               to="/docs"
               className={({ isActive }) =>
-                `font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
               }
             >
               Docs
@@ -50,7 +50,7 @@ export default function Layout({ children }: LayoutProps) {
           </nav>
           {/* hamburger for small screens */}
           <button
-            className="md:hidden text-gray-600 hover:text-gray-800"
+            className="md:hidden text-white hover:text-gray-200"
             onClick={() => setMenuOpen(open => !open)}
             aria-label="Toggle menu"
           >
@@ -87,7 +87,9 @@ export default function Layout({ children }: LayoutProps) {
                 to="/"
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                  `block font-medium ${
+                    isActive ? 'text-blue-600' : 'text-gray-600'
+                  } hover:text-blue-800`
                 }
               >
                 Home
@@ -96,7 +98,9 @@ export default function Layout({ children }: LayoutProps) {
                 to="/translate"
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                  `block font-medium ${
+                    isActive ? 'text-blue-600' : 'text-gray-600'
+                  } hover:text-blue-800`
                 }
               >
                 Translate
@@ -105,7 +109,9 @@ export default function Layout({ children }: LayoutProps) {
                 to="/train"
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                  `block font-medium ${
+                    isActive ? 'text-blue-600' : 'text-gray-600'
+                  } hover:text-blue-800`
                 }
               >
                 Train
@@ -114,7 +120,9 @@ export default function Layout({ children }: LayoutProps) {
                 to="/docs"
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                  `block font-medium ${
+                    isActive ? 'text-blue-600' : 'text-gray-600'
+                  } hover:text-blue-800`
                 }
               >
                 Docs

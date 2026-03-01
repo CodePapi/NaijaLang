@@ -28,6 +28,7 @@ and CI automation.
   cosine similarity and TF‑IDF.
 - **Language support**: seeded with dozens of Nigerian languages and growing.
 - **Training UI**: users can submit real examples and have them stored persistently.
+- **Polished frontend**: pages styled with Tailwind, responsive navigation, and clean typography.
 - **Reusable package**: `nigeria-languages` is now published to npm at
   [npmjs.com/package/nigeria-languages](https://www.npmjs.com/package/nigeria-languages).
 - **CI/CD**: automated tests and package publishing via GitHub Actions.
@@ -37,7 +38,7 @@ and CI automation.
 
 - Improve model quality and performance (currently rudimentary embeddings).
 - Add more robust authentication/authorization to the API.
-- Expand frontend with documentation, bulk training uploads, and user accounts.
+- Expand frontend with documentation, bulk training uploads, user accounts, and further visual refinements.
 - Set up a hosted demo and database migration strategy for production.
 - Broaden language coverage with community contributions.
 
