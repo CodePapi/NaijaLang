@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd nigeria-languages
-          npm ci
+          npm install
 
       - name: Publish package
         run: |
