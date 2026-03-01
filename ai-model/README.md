@@ -159,10 +159,19 @@ PGHOST_PORT=5433    # used by docker-compose
 
 You can adjust any of these if your setup differs; the server and docker compose will read from the file.
 
-There are also two handy scripts in the repository:
+There are also three handy scripts in the repository:
 
 * `scripts/generate-language-table.js` – rebuilds `LANGUAGE_CODES.md` with names & codes.
-* `scripts/generate-training.js` – produces a simple `training-sample.json` dataset (English→everyone else).  Use this file to bulk load examples with the `/training/batch` endpoint and quickly populate the vector model.
+* `scripts/generate-training.js` – produces a simple `training-sample.json` dataset (English→everyone else).
+* `scripts/import-training.ts` – runs inside the ai-model context and bulk‑imports a JSON file of examples directly into the database.  Example:
+
+```bash
+cd ai-model
+# generate or supply a JSON file containing an array of training examples
+npx ts-node scripts/import-training.ts ../training-sample.json
+```
+
+You can then start the server and exercise translations against the newly loaded data.
 
 The app will automatically connect using the `DATABASE_URL` environment variable. If the database isn't available, the application will still start but language endpoints will return empty results.
 - Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
