@@ -12,6 +12,8 @@ generator client {
 model Language {
   id   Int    @id @default(autoincrement())
   name String @unique
+  // two-letter unique identifier for the language
+  code String @unique
   type String?
   info String?
 }

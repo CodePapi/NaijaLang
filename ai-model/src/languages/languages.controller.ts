@@ -19,10 +19,10 @@ export class LanguagesController {
     return this.languagesService.findAll();
   }
 
-  @Get(':name')
-  @ApiOperation({ summary: 'Get information about a language by name' })
-  async findOne(@Param('name') name: string) {
-    const language = await this.languagesService.findOne(name);
+  @Get(':identifier')
+  @ApiOperation({ summary: 'Get information about a language by name or code' })
+  async findOne(@Param('identifier') identifier: string) {
+    const language = await this.languagesService.findOne(identifier);
     if (!language) {
       throw new NotFoundException('Language not found');
     }

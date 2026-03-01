@@ -11,9 +11,15 @@ export class LanguagesService {
     return this.prisma.language.findMany();
   }
 
-  async findOne(name: string) {
-    return this.prisma.language.findUnique({
-      where: { name },
+  async findOne(identifier: string) {
+    // allow lookup by either name or code
+    return this.prisma.language.findFirst({
+      where: {
+        OR: [
+          { name: identifier },
+          { code: identifier },
+        ],
+      },
     });
   }
 
@@ -37,8 +43,8 @@ export class LanguagesService {
     for (const l of langs) {
       await this.prisma.language.upsert({
         where: { name: l.name },
-        update: { type: l.type || null, info: l.info || null },
-        create: { name: l.name, type: l.type || null, info: l.info || null },
+        update: { type: l.type || null, info: l.info || null, code: l.code || null },
+        create: { name: l.name, type: l.type || null, info: l.info || null, code: l.code || null },
       });
     }
     return { inserted: langs.length };
