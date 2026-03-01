@@ -1,3 +1,5 @@
+import React from 'react';
+import languagesList from 'nigeria-languages';
 
 interface Language {
   name: string;
@@ -5,7 +7,7 @@ interface Language {
 }
 
 export default function Train() {
-  const [languages, setLanguages] = React.useState<Language[]>([]);
+  const [languages] = React.useState<Language[]>(languagesList as Language[]);
   const [srcLang, setSrcLang] = React.useState<string>('English');
   const [tgtLang, setTgtLang] = React.useState<string>('Nigerian Pidgin');
   const [sourceText, setSourceText] = React.useState('');
@@ -14,12 +16,7 @@ export default function Train() {
 
   const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
-  React.useEffect(() => {
-    fetch(apiBase + '/lang.json')
-      .then(res => res.json())
-      .then((data: { languages: Language[] }) => setLanguages(data.languages))
-      .catch(err => console.error('could not load languages', err));
-  }, [apiBase]);
+  // languages are static; no fetch required
 
   const submitExample = async () => {
     if (!sourceText.trim() || !targetText.trim()) {
@@ -30,7 +27,7 @@ export default function Train() {
     const tgtCode = languages.find(l => l.name === tgtLang)?.code || tgtLang;
 
     try {
-      const res = await fetch('/api/train', {
+      const res = await fetch(apiBase + '/api/train', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -1,4 +1,5 @@
 import React from 'react';
+import languagesList from 'nigeria-languages';
 
 interface Language {
   name: string;
@@ -9,7 +10,8 @@ interface Language {
 }
 
 export default function Translate() {
-  const [languages, setLanguages] = React.useState<Language[]>([]);
+  // use the npm package rather than fetching a static file
+  const [languages] = React.useState<Language[]>(languagesList as Language[]);
   const [srcLang, setSrcLang] = React.useState<string>('English');
   const [tgtLang, setTgtLang] = React.useState<string>('Igbo');
   const [text, setText] = React.useState('');
@@ -17,14 +19,7 @@ export default function Translate() {
 
   const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
-  React.useEffect(() => {
-    fetch(apiBase + '/lang.json')
-      .then(res => res.json())
-      .then((data: { languages: Language[] }) =>
-         setLanguages(data.languages)
-    )
-      .catch(err => console.error('could not load languages', err));
-  }, [apiBase]);
+  // no need for effect; languages are static
 
   return (
     <div className="max-w-3xl mx-auto">

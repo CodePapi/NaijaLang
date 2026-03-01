@@ -1,4 +1,5 @@
 import React from 'react';
+import languagesList from 'nigeria-languages';
 
 interface Language {
   name: string;
@@ -8,14 +9,13 @@ interface Language {
 }
 
 export default function Docs() {
-  const [count, setCount] = React.useState<number | null>(null);
+  const [count] = React.useState<number>(
+    (languagesList as Language[]).length
+  );
 
-  React.useEffect(() => {
-    fetch('/lang.json')
-      .then(r => r.json())
-      .then((data: Language[]) => setCount(data.length))
-      .catch(() => setCount(null));
-  }, []);
+  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+
+  // no fetch needed; languages are part of npm package
 
   return (
     <div className="max-w-3xl mx-auto">
@@ -24,14 +24,17 @@ export default function Docs() {
         <p className="mb-4">
           This section will describe the API endpoints and how to contribute. The web interface
           also includes a <a className="text-blue-600 underline" href="/train">training page</a>
-          where examples can be added one‑by‑one or via file upload.
+          where examples can be added one‑by‑one or via file upload. Under the hood the list of
+          languages is pulled from the <code>nigeria-languages</code> npm package rather than a
+          hard‑coded file.
         </p>
-        {count !== null && (
-          <p className="mb-4">
-            Currently supporting <strong>{count}</strong> languages (see
-            <code>/lang.json</code> for the list).
-          </p>
-        )}
+        <p className="mb-4">
+          Currently supporting <strong>{count}</strong> languages from the package.
+        </p>
+        <p className="mb-4">
+          API requests use the <code>VITE_API_BASE_URL</code> environment variable, which should
+          point to the backend (e.g. <code>http://localhost:3000</code> in development).
+        </p>
         <h2 className="text-xl font-semibold mt-6">API Endpoints</h2>
         <ul className="list-disc ml-5 mt-2 space-y-1">
           <li><code>POST /api/translate</code> - translate text using current examples</li>
