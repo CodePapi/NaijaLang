@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:15
+    # use an image that already bundles the pgvector extension
+    image: ankane/pgvector:latest
     environment:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
@@ -16,7 +17,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./prisma/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
-    command: ["postgres", "-c", "shared_preload_libraries=pgvector"]
+    # no extra command needed; extension available by default
 
 volumes:
   db_data:
