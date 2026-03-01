@@ -2,6 +2,7 @@ import React from 'react';
 
 interface Language {
   name: string;
+  code?: string;
   otherNames?: string[];
   type: string;
   info: string;
@@ -61,9 +62,23 @@ export default function Translate() {
           />
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded shadow"
-            onClick={() => {
-              /* call backend when available */
-              setResult(`(translation of "${text}" from ${srcLang} to ${tgtLang})`);
+            onClick={async () => {
+              if (!text.trim()) return;
+              // find codes for the selected names
+              const src = languages.find((l) => l.name === srcLang)?.code || srcLang;
+              const tgt = languages.find((l) => l.name === tgtLang)?.code || tgtLang;
+              try {
+                const res = await fetch('/model/translate', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ text, sourceLang: src, targetLang: tgt }),
+                });
+                const json = await res.json();
+                setResult(json.translation || '(no translation)');
+              } catch (err) {
+                console.error(err);
+                setResult('error contacting server');
+              }
             }}
           >
             Translate
