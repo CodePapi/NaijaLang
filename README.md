@@ -48,12 +48,29 @@ We welcome help! Here’s how you can get involved:
 1. **Fork the repo** and create a feature branch (`feature/my-change`).
 2. **Run the services locally**:
    - `cd ai-model && npm install && npm run dev` (requires Postgres)
-   - `cd frontend && npm install && npm run dev`
+   - `cd frontend && npm install && npm run dev` (runs on 5175 by default)
    - Optionally `cd backend && npm install && npm run dev` for proxy.
 3. **Write tests** for new features/bug fixes. We use Jest and Supertest.
 4. **Open a pull request** against `main`. Describe your changes and link any
    relevant issues.
 5. Follow the [MIT license](#license) and be respectful in discussions.
+
+### Building & deploying the frontend
+
+The frontend is a standard Vite/React app. To create a production build:
+
+```bash
+cd frontend
+npm run build
+```
+
+The output appears in `frontend/dist` and can be served by any static host
+(such as Netlify, Vercel, GitHub Pages, etc.). Set the `VITE_API_BASE_URL`
+variable at build time to point at your backend.
+
+For the backend and ai-model, you can run the Docker Compose definitions or just
+start them with `npm run start` once dependencies are installed. A hosted
+service will require a proper Postgres database and environment configuration.
 
 ### Reporting issues
 
