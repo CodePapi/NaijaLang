@@ -1,4 +1,4 @@
-# NaijaLang
+# NaijaLang 🇳🇬
 
 **Open‑source Nigerian language translation & training platform**
 
