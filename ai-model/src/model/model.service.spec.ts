@@ -57,6 +57,15 @@ describe('ModelService', () => {
     expect(out).toBe('hola');
   });
 
+  it('throws if the only example has identical source and target', async () => {
+    fakeTraining.findFor = jest.fn().mockResolvedValue([
+      { source: 'foo', target: 'foo', embedding: [0, 0, 0] },
+    ]);
+    await expect(service.translate('foo', 'en', 'es')).rejects.toThrow(
+      /don't have a proper/i,
+    );
+  });
+
   describe('placeholder detection', () => {
     it('flags unchanged output', () => {
       expect(isPlaceholder('hello', 'hello', 'English')).toBe(true);

@@ -295,6 +295,8 @@ be prepared to iterate on reviews.
 - If the translation button returns a red training‑hint message instead of
   a result, that means the model didn't know the answer; please **add
   examples** for that pair.
+- Avoid saving examples where the source and target text are identical;
+  these are interpreted as placeholders and will trigger a training hint.
 - Codes are flexible: you can refer to a language by its name (`"Mandara"`)
   or its two‑letter code (`"m4"`) interchangeably.
 

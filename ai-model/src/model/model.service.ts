@@ -135,6 +135,11 @@ export class ModelService {
     // exact match
     const exact = examples.find((e) => e.source === text);
     if (exact) {
+      if (isPlaceholder(exact.target, text, tgt.code)) {
+        throw new BadRequestException(
+          `Sorry, I don't have a proper ${tgt.name} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`,
+        );
+      }
       return exact.target;
     }
 
@@ -150,6 +155,11 @@ export class ModelService {
       }
     }
     if (bestVec) {
+      if (isPlaceholder(bestVec.example.target, text, tgt.code)) {
+        throw new BadRequestException(
+          `Sorry, I don't have a proper ${tgt.name} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`,
+        );
+      }
       return bestVec.example.target;
     }
 
@@ -162,10 +172,21 @@ export class ModelService {
       }
     }
     if (best) {
+      if (isPlaceholder(best.example.target, text, tgt.code)) {
+        throw new BadRequestException(
+          `Sorry, I don't have a proper ${tgt.name} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`,
+        );
+      }
       return best.example.target;
     }
 
     // naive fallback
-    return examples[0].target;
+    const naive = examples[0].target;
+    if (isPlaceholder(naive, text, tgt.code)) {
+      throw new BadRequestException(
+        `Sorry, I don't have a proper ${tgt.name} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`,
+      );
+    }
+    return naive;
   }
 }
