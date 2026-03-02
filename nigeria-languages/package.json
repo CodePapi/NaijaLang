@@ -1,6 +1,6 @@
 {
   "name": "nigeria-languages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A curated list of Nigerian languages with metadata for dropdowns, selects, and other UI components.",
   "main": "index.js",
   "keywords": [
