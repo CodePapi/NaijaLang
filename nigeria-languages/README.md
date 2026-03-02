@@ -22,9 +22,6 @@ npm install nigeria-languages
 # yarn add nigeria-languages
 ```
 
-> *(Note: this package is maintained within the NaijaLang monorepo; the
-> above command assumes you have published it to the npm registry or
-> are using a local path during development.)*
 
 ## Usage
 
