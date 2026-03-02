@@ -1,5 +1,5 @@
 import React from 'react';
-import languagesList from 'nigeria-languages';
+import { getLanguages, addExample, fetchExamples } from '../api';
 
 interface Language {
   name: string;
@@ -7,16 +7,43 @@ interface Language {
 }
 
 export default function Train() {
-  const [languages] = React.useState<Language[]>(languagesList as Language[]);
-  const [srcLang, setSrcLang] = React.useState<string>('English');
-  const [tgtLang, setTgtLang] = React.useState<string>('Nigerian Pidgin');
+  const [languages, setLanguages] = React.useState<Language[]>([]);
+  const [srcLang, setSrcLang] = React.useState<string>('');
+  const [tgtLang, setTgtLang] = React.useState<string>('');
+  const [examples, setExamples] = React.useState<Array<{source:string;target:string}>>([]);
   const [sourceText, setSourceText] = React.useState('');
   const [targetText, setTargetText] = React.useState('');
   const [message, setMessage] = React.useState('');
 
-  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
-  // languages are static; no fetch required
+  React.useEffect(() => {
+    async function loadLangs() {
+      try {
+        const d = await getLanguages();
+        setLanguages(d);
+        if (d.length > 0) {
+          setSrcLang(d[0].code || d[0].name);
+          setTgtLang(d[0].code || d[0].name);
+        }
+      } catch (e) {
+        console.error('failed to load languages', e);
+      }
+    }
+    loadLangs();
+  }, []);
+
+  React.useEffect(() => {
+    async function loadExamples() {
+      if (!srcLang || !tgtLang) return;
+      try {
+        const arr = await fetchExamples(srcLang, tgtLang);
+        setExamples(arr);
+      } catch (e) {
+        console.error('failed to load examples', e);
+      }
+    }
+    loadExamples();
+  }, [srcLang, tgtLang]);
 
   const submitExample = async () => {
     if (!sourceText.trim() || !targetText.trim()) {
@@ -27,24 +54,17 @@ export default function Train() {
     const tgtCode = languages.find(l => l.name === tgtLang)?.code || tgtLang;
 
     try {
-      const res = await fetch(apiBase + '/api/train', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sourceLang: srcCode,
-          targetLang: tgtCode,
-          source: sourceText,
-          target: targetText,
-        }),
+      await addExample({
+        sourceLang: srcCode,
+        targetLang: tgtCode,
+        source: sourceText,
+        target: targetText,
       });
-      if (res.ok) {
-        setMessage('Example saved successfully');
-        setSourceText('');
-        setTargetText('');
-      } else {
-        const text = await res.text();
-        setMessage('Error: ' + text);
-      }
+      setMessage('Example saved successfully');
+      setSourceText('');
+      setTargetText('');
+      const arr = await fetchExamples(srcCode, tgtCode);
+      setExamples(arr);
     } catch (err) {
       console.error(err);
       setMessage('Network error');
@@ -74,7 +94,7 @@ export default function Train() {
                   onChange={e => setSrcLang(e.target.value)}
                 >
                   {languages.map(l => (
-                    <option key={l.name} value={l.name}>
+                    <option key={l.code || l.name} value={l.code || l.name}>
                       {l.name}
                     </option>
                   ))}
@@ -91,7 +111,7 @@ export default function Train() {
                   onChange={e => setTgtLang(e.target.value)}
                 >
                   {languages.map(l => (
-                    <option key={l.name} value={l.name}>
+                    <option key={l.code || l.name} value={l.code || l.name}>
                       {l.name}
                     </option>
                   ))}
@@ -130,6 +150,20 @@ export default function Train() {
             </button>
             {message && (
               <div role="status" className="text-sm text-gray-700 mt-2">{message}</div>
+            )}
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold">Existing examples</h2>
+            {examples.length === 0 ? (
+              <p className="text-sm text-gray-600">No examples for this pair yet.</p>
+            ) : (
+              <ul className="list-disc pl-5 space-y-1">
+                {examples.map((e, idx) => (
+                  <li key={idx} className="text-sm">
+                    <em>{e.source}</em> → <strong>{e.target}</strong>
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
 

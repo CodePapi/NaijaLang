@@ -35,9 +35,10 @@ export default function Docs() {
         </p>
         <h2>API Endpoints</h2>
         <ul>
-          <li><code>POST /api/translate</code> - translate text using current examples</li>
-          <li><code>POST /api/train</code> - add training examples; can be a single example or a batch array</li>
-          <li><code>GET /api/languages</code> - list supported languages</li>
+          <li><code>POST /api/translate</code> - proxy to the AI model's translation endpoint; accepts <code>{"{ text, sourceLang, targetLang }"}</code></li>
+          <li><code>POST /api/train</code> - proxy to /training; add a single example or send an array for batch insertion</li>
+          <li><code>GET /api/train/:source/:target</code> - fetch existing training examples for a pair</li>
+          <li><code>GET /api/languages</code> - retrieve the list of languages (name &amp; code)</li>
         </ul>
       </article>
     </div>

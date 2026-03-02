@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Translate from './pages/Translate'
 import Train from './pages/Train'
 import Docs from './pages/Docs'
+import Languages from './pages/Languages'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             }
           />
           <Route path="/translate" element={<Translate />} />
+          <Route path="/languages" element={<Languages />} />
           <Route path="/train" element={<Train />} />
           <Route path="/docs" element={<Docs />} />
         </Routes>

@@ -31,6 +31,14 @@ and CI automation.
 - **Polished frontend**: pages styled with Tailwind, responsive navigation, and clean typography.
 - **Reusable package**: `nigeria-languages` is now published to npm at
   [npmjs.com/package/nigeria-languages](https://www.npmjs.com/package/nigeria-languages).
+
+> **Note:** this repo includes a small `backend/` Next.js app that serves as
+> a proxy between the React frontend and the `ai-model` service. The proxy
+> is purely for convenience (avoiding CORS, centralising `AI_MODEL_URL`,
+> and bundling everything in one deployable project). You may delete the
+> `backend/` directory entirely if you prefer to deploy the frontend as a
+> static site and have it call the `ai-model` service directly via
+> `VITE_API_BASE_URL`.
 - **CI/CD**: automated tests and package publishing via GitHub Actions.
 - **Open source**: the code is licensed under MIT and public on GitHub.
 

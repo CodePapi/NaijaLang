@@ -1,5 +1,23 @@
+import OpenAI from 'openai';
+
+const openaiClient = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
+
 // simple privacy-preserving embedding based on word hashing and normalization
-export function embed(text: string, dim = 128): number[] {
+// when an OpenAI key is configured we fall back to the provider's embeddings
+export async function embed(text: string, dim = 128): Promise<number[]> {
+  if (openaiClient) {
+    // use OpenAI embedding endpoint; callers must await the promise
+    const resp = await openaiClient.embeddings.create({
+      model: 'text-embedding-3-small',
+      input: text,
+    });
+    // the new client returns data array
+    return resp.data[0].embedding as number[];
+  }
+
+  // local fallback hashing embedder
   const vec = new Array(dim).fill(0);
   const words = text.toLowerCase().match(/\b\w+\b/g) || [];
   for (const w of words) {

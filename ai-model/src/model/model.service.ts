@@ -28,6 +28,18 @@ function levenshtein(a: string, b: string): number {
 }
 
 import { embed as textEmbed, distance as vectorDistance } from '../utils/embedding';
+import { translateWithOpenAI } from '../utils/openai';
+
+// simple heuristic to detect when the model returned a dummy translation
+function isPlaceholder(translation: string, original: string, targetLang: string): boolean {
+  if (!translation) return false;
+  const normalized = translation.toLowerCase().trim();
+  const orig = original.toLowerCase().trim();
+  if (normalized === orig) return true; // unchanged
+  if (normalized.includes(`in ${targetLang.toLowerCase()}`)) return true;
+  if (normalized.startsWith('[') && normalized.endsWith(']')) return true;
+  return false;
+}
 
 @Injectable()
 export class ModelService {
@@ -44,6 +56,16 @@ export class ModelService {
       return `[${targetLang}] ${text}`;
     }
 
+    // try to leverage a cloud LLM if configured
+    const aiResult = await translateWithOpenAI(text, sourceLang, targetLang, examples);
+    if (aiResult) {
+      // if the model just returned a placeholder phrase, encourage training
+      if (isPlaceholder(aiResult, text, targetLang)) {
+        return `Sorry, I don't have a proper ${targetLang} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`;
+      }
+      return aiResult;
+    }
+
     // exact match
     const exact = examples.find((e) => e.source === text);
     if (exact) {
@@ -51,7 +73,7 @@ export class ModelService {
     }
 
     // if examples have embeddings, perform vector search
-    const inputEmb = textEmbed(text);
+    const inputEmb = await textEmbed(text);
     let bestVec: { example: any; dist: number } | null = null;
     for (const e of examples) {
       if (e.embedding && Array.isArray(e.embedding)) {
