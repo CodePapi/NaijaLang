@@ -22,7 +22,11 @@ export default function Docs() {
         <p>
           This section will describe the API endpoints and how to contribute. The web interface
           also includes a <a className="text-blue-600 underline" href="/train">training page</a>
-          where examples can be added one‑by‑one or via file upload. Under the hood the list of
+          where anyone can teach the model – you can type a single pair, paste a bunch of
+          lines at once (e.g. <code>hello → sallama</code> per line) or import a JSON/CSV file.
+          The translation page even has a “Save as example” button so you can add whatever
+          you just translated in one click. Non‑technical users don’t need to know anything
+          you’re helping the system learn. Under the hood the list of
           languages is pulled from the <code>nigeria-languages</code> npm package rather than a
           hard‑coded file.
         </p>

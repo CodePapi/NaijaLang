@@ -1,5 +1,5 @@
 import React from 'react';
-import { getLanguages, translate as apiTranslate } from '../api';
+import { getLanguages, translate as apiTranslate, addExample } from '../api';
 
 interface Language {
   name: string;
@@ -15,6 +15,7 @@ export default function Translate() {
   const [tgtLang, setTgtLang] = React.useState<string>('');
   const [text, setText] = React.useState('');
   const [result, setResult] = React.useState('');
+  const [trainMsg, setTrainMsg] = React.useState('');
 
 
   React.useEffect(() => {
@@ -55,7 +56,7 @@ export default function Translate() {
               >
                 {languages.map(l => (
                   <option key={l.code || l.name} value={l.code || l.name}>
-                    {l.name}
+                    {l.name}{l.code ? ` (${l.code})` : ''}
                   </option>
                 ))}
               </select>
@@ -72,7 +73,7 @@ export default function Translate() {
               >
                 {languages.map(l => (
                   <option key={l.code || l.name} value={l.code || l.name}>
-                    {l.name}
+                    {l.name}{l.code ? ` (${l.code})` : ''}
                   </option>
                 ))}
               </select>
@@ -100,9 +101,13 @@ export default function Translate() {
                 try {
                   const json = await apiTranslate(text, src, tgt);
                   setResult(json.translation || '(no translation)');
-                } catch (err) {
+                  setTrainMsg('');
+                } catch (err: any) {
                   console.error(err);
-                  setResult('error contacting server');
+                  const message = err?.message || 'error contacting server';
+                  // if it's a training hint, show it in the train area
+                  setTrainMsg(message);
+                  setResult('');
                 }
               }}
             >
@@ -117,6 +122,27 @@ export default function Translate() {
             >
               {result || 'Output will appear here'}
             </div>
+            {result && (
+              <button
+                className="mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded"
+                onClick={async () => {
+                  const src = srcLang;
+                  const tgt = tgtLang;
+                  try {
+                    await addExample({ sourceLang: src, targetLang: tgt, source: text, target: result });
+                    setTrainMsg('Example saved');
+                    setTimeout(() => setTrainMsg(''), 3000);
+                  } catch (e) {
+                    console.error(e);
+                    setTrainMsg('Save failed');
+                    setTimeout(() => setTrainMsg(''), 3000);
+                  }
+                }}
+              >
+                Save as example
+              </button>
+            )}
+            {trainMsg && <p className="text-sm text-green-600 mt-1">{trainMsg}</p>}
           </div>
         </div>
       </div>

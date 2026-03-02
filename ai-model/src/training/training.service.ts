@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { embed as textEmbed } from '../utils/embedding';
+import { normalizeLang } from '../utils/languages';
+
 
 export interface TrainingExample {
   sourceLang: string;
@@ -15,13 +17,22 @@ export class TrainingService {
   constructor(private readonly prisma: PrismaService) {}
 
   async add(example: TrainingExample) {
+    // normalize language identifiers to codes so the database is consistent
+    const src = normalizeLang(example.sourceLang);
+    const tgt = normalizeLang(example.targetLang);
+    const normalized: TrainingExample = {
+      ...example,
+      sourceLang: src.code,
+      targetLang: tgt.code,
+    };
+
     if (!process.env.DATABASE_URL) {
       // can't persist without a database; just compute embedding and return
-      const emb = await textEmbed(example.source);
-      return { ...example, embedding: emb };
+      const emb = await textEmbed(normalized.source);
+      return { ...normalized, embedding: emb };
     }
-    const emb = await textEmbed(example.source);
-    const e = { ...example, embedding: emb };
+    const emb = await textEmbed(normalized.source);
+    const e = { ...normalized, embedding: emb };
     try {
       return this.prisma.trainingExample.create({ data: e });
     } catch (err) {
@@ -31,16 +42,23 @@ export class TrainingService {
   }
 
   async addBatch(examples: TrainingExample[]) {
+    // normalize every language code before computing embeddings
+    const normalizedExamples: TrainingExample[] = examples.map((ex) => {
+      const src = normalizeLang(ex.sourceLang);
+      const tgt = normalizeLang(ex.targetLang);
+      return { ...ex, sourceLang: src.code, targetLang: tgt.code };
+    });
+
     if (!process.env.DATABASE_URL) {
       const withEmb = [] as Array<TrainingExample & { embedding: number[] }>;
-      for (const ex of examples) {
+      for (const ex of normalizedExamples) {
         const emb = await textEmbed(ex.source);
         withEmb.push({ ...ex, embedding: emb });
       }
       return { count: withEmb.length };
     }
     const withEmb = [] as Array<TrainingExample & { embedding: number[] }>;
-    for (const ex of examples) {
+    for (const ex of normalizedExamples) {
       const emb = await textEmbed(ex.source);
       withEmb.push({ ...ex, embedding: emb });
     }
@@ -63,11 +81,14 @@ export class TrainingService {
 
   async findFor(sourceLang: string, targetLang: string) {
     if (!process.env.DATABASE_URL) return [];
+    // normalize input before querying
+    const src = normalizeLang(sourceLang);
+    const tgt = normalizeLang(targetLang);
     try {
       return this.prisma.trainingExample.findMany({
         where: {
-          sourceLang: { equals: sourceLang, mode: 'insensitive' },
-          targetLang: { equals: targetLang, mode: 'insensitive' },
+          sourceLang: { equals: src.code, mode: 'insensitive' },
+          targetLang: { equals: tgt.code, mode: 'insensitive' },
         },
       });
     } catch {

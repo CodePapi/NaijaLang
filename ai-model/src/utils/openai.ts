@@ -1,9 +1,5 @@
 import OpenAI from 'openai';
 
-const client = process.env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-  : null;
-
 // build a prompt for translation with examples and ask the model
 export async function translateWithOpenAI(
   text: string,
@@ -11,7 +7,8 @@ export async function translateWithOpenAI(
   targetLang: string,
   examples: Array<{ source: string; target: string }>,
 ): Promise<string | null> {
-  if (!client) return null;
+  if (!process.env.OPENAI_API_KEY) return null;
+  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   // assemble few-shot examples (if any)
   const snippet = examples && examples.length
@@ -19,7 +16,17 @@ export async function translateWithOpenAI(
     : '';
 
   // build an instruction emphasizing brevity and translation only
-  let prompt = `You are a translation assistant. Convert text from ${sourceLang} to ${targetLang} and respond with the translated text only, no explanation.`;
+  // also insist on Latin‑script output and a polite 'I don't know' if unsure
+  // note: in this system language identifiers come from the
+  // `nigeria-languages` dataset. codes such as "np" mean Nigerian Pidgin
+  // (not Nepali) and codes like "m4" refer to Mandara.  the model should
+  // **only** translate between English and one of the Nigerian languages in
+  // the list; any other target should be treated as unknown.  if unsure,
+  // respond with "I don't know."
+  let prompt = `You are a translation assistant. Convert text from ${sourceLang} to ${targetLang} and respond with the translated text only, no explanation. ` +
+               `Do not translate into or from any language other than English or one of the Nigerian languages in the provided examples. ` +
+               `Use Latin script appropriate for the target language; avoid other writing systems. ` +
+               `If you cannot produce a valid translation, say "I don't know."`;
 
   if (snippet) {
     prompt += `\n\nExamples:\n${snippet}`;

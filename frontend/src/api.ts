@@ -29,7 +29,12 @@ export async function translate(text:string, sourceLang:string, targetLang:strin
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text, sourceLang, targetLang }),
   });
-  if (!res.ok) throw new Error(`translate failed: ${res.status}`);
+  if (!res.ok) {
+    // try to surface server message if available
+    let msg = await res.text();
+    if (!msg) msg = `translate failed: ${res.status}`;
+    throw new Error(msg);
+  }
   return res.json();
 }
 
@@ -41,6 +46,17 @@ export async function addExample(example: any) {
     body: JSON.stringify(example),
   });
   if (!res.ok) throw new Error(`train failed: ${res.status}`);
+  return res.json();
+}
+
+export async function addBatch(examples: any[]) {
+  const url = BASE ? `${BASE}/training/batch` : '/training/batch';
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(examples),
+  });
+  if (!res.ok) throw new Error(`train batch failed: ${res.status}`);
   return res.json();
 }
 
