@@ -28,11 +28,23 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-  // lang.json lives one level above ai-model (workspace root)
-  const file = path.resolve(__dirname, '../../lang.json');
-  const data = fs.readFileSync(file, 'utf-8');
-  const json = JSON.parse(data);
-  const languages = json.languages || [];
+  // try to load a published package first; fall back to workspace lang.json
+  let languages: any[] = [];
+  try {
+    // require resolves to the installed version of nigeria-languages
+    // which exports an array of language objects
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const pkg = require('nigeria-languages');
+    if (Array.isArray(pkg)) {
+      languages = pkg;
+    }
+  } catch {
+    // package not installed or not found, read local file
+    const file = path.resolve(__dirname, '../../lang.json');
+    const data = fs.readFileSync(file, 'utf-8');
+    const json = JSON.parse(data);
+    languages = json.languages || [];
+  }
 
   for (const lang of languages) {
     await prisma.language.upsert({

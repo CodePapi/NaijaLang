@@ -1,5 +1,5 @@
 import React from 'react';
-import languagesList from 'nigeria-languages';
+import { getLanguages, translate as apiTranslate, addExample } from '../api';
 
 interface Language {
   name: string;
@@ -10,16 +10,29 @@ interface Language {
 }
 
 export default function Translate() {
-  // use the npm package rather than fetching a static file
-  const [languages] = React.useState<Language[]>(languagesList as Language[]);
-  const [srcLang, setSrcLang] = React.useState<string>('English');
-  const [tgtLang, setTgtLang] = React.useState<string>('Igbo');
+  const [languages, setLanguages] = React.useState<Language[]>([]);
+  const [srcLang, setSrcLang] = React.useState<string>('');
+  const [tgtLang, setTgtLang] = React.useState<string>('');
   const [text, setText] = React.useState('');
   const [result, setResult] = React.useState('');
+  const [trainMsg, setTrainMsg] = React.useState('');
 
-  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
-  // no need for effect; languages are static
+  React.useEffect(() => {
+    async function load() {
+      try {
+        const data = await getLanguages();
+        setLanguages(data);
+        if (data.length > 0) {
+          setSrcLang(data[0].code || data[0].name);
+          setTgtLang(data[0].code || data[0].name);
+        }
+      } catch (e) {
+        console.error('Failed to fetch languages', e);
+      }
+    }
+    load();
+  }, []);
 
   return (
     <div className="max-w-2xl mx-auto py-6">
@@ -42,8 +55,8 @@ export default function Translate() {
                 onChange={e => setSrcLang(e.target.value)}
               >
                 {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
+                  <option key={l.code || l.name} value={l.code || l.name}>
+                    {l.name}{l.code ? ` (${l.code})` : ''}
                   </option>
                 ))}
               </select>
@@ -59,8 +72,8 @@ export default function Translate() {
                 onChange={e => setTgtLang(e.target.value)}
               >
                 {languages.map(l => (
-                  <option key={l.name} value={l.name}>
-                    {l.name}
+                  <option key={l.code || l.name} value={l.code || l.name}>
+                    {l.name}{l.code ? ` (${l.code})` : ''}
                   </option>
                 ))}
               </select>
@@ -83,20 +96,18 @@ export default function Translate() {
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow"
               onClick={async () => {
                 if (!text.trim()) return;
-                // find codes for the selected names
-                const src = languages.find((l) => l.name === srcLang)?.code || srcLang;
-                const tgt = languages.find((l) => l.name === tgtLang)?.code || tgtLang;
+                const src = srcLang;
+                const tgt = tgtLang;
                 try {
-                  const res = await fetch(apiBase + '/model/translate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text, sourceLang: src, targetLang: tgt }),
-                  });
-                  const json = await res.json();
+                  const json = await apiTranslate(text, src, tgt);
                   setResult(json.translation || '(no translation)');
-                } catch (err) {
+                  setTrainMsg('');
+                } catch (err: any) {
                   console.error(err);
-                  setResult('error contacting server');
+                  const message = err?.message || 'error contacting server';
+                  // if it's a training hint, show it in the train area
+                  setTrainMsg(message);
+                  setResult('');
                 }
               }}
             >
@@ -111,6 +122,27 @@ export default function Translate() {
             >
               {result || 'Output will appear here'}
             </div>
+            {result && (
+              <button
+                className="mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded"
+                onClick={async () => {
+                  const src = srcLang;
+                  const tgt = tgtLang;
+                  try {
+                    await addExample({ sourceLang: src, targetLang: tgt, source: text, target: result });
+                    setTrainMsg('Example saved');
+                    setTimeout(() => setTrainMsg(''), 3000);
+                  } catch (e) {
+                    console.error(e);
+                    setTrainMsg('Save failed');
+                    setTimeout(() => setTrainMsg(''), 3000);
+                  }
+                }}
+              >
+                Save as example
+              </button>
+            )}
+            {trainMsg && <p className="text-sm text-green-600 mt-1">{trainMsg}</p>}
           </div>
         </div>
       </div>

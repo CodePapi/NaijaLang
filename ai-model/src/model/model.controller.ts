@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { ModelService } from './model.service';
 import { TranslateDto } from '../dto/translate.dto';
 
@@ -11,5 +11,11 @@ export class ModelController {
     const { text, sourceLang, targetLang } = body;
     const translation = await this.modelService.translate(text, sourceLang, targetLang);
     return { translation };
+  }
+
+  @Post('fine-tune')
+  async fineTune() {
+    const result = await this.modelService.fineTune();
+    return { result };
   }
 }

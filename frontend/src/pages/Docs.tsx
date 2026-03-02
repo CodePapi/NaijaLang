@@ -22,7 +22,11 @@ export default function Docs() {
         <p>
           This section will describe the API endpoints and how to contribute. The web interface
           also includes a <a className="text-blue-600 underline" href="/train">training page</a>
-          where examples can be added one‑by‑one or via file upload. Under the hood the list of
+          where anyone can teach the model – you can type a single pair, paste a bunch of
+          lines at once (e.g. <code>hello → sallama</code> per line) or import a JSON/CSV file.
+          The translation page even has a “Save as example” button so you can add whatever
+          you just translated in one click. Non‑technical users don’t need to know anything
+          you’re helping the system learn. Under the hood the list of
           languages is pulled from the <code>nigeria-languages</code> npm package rather than a
           hard‑coded file.
         </p>
@@ -35,9 +39,10 @@ export default function Docs() {
         </p>
         <h2>API Endpoints</h2>
         <ul>
-          <li><code>POST /api/translate</code> - translate text using current examples</li>
-          <li><code>POST /api/train</code> - add training examples; can be a single example or a batch array</li>
-          <li><code>GET /api/languages</code> - list supported languages</li>
+          <li><code>POST /api/translate</code> - proxy to the AI model's translation endpoint; accepts <code>{"{ text, sourceLang, targetLang }"}</code></li>
+          <li><code>POST /api/train</code> - proxy to /training; add a single example or send an array for batch insertion</li>
+          <li><code>GET /api/train/:source/:target</code> - fetch existing training examples for a pair</li>
+          <li><code>GET /api/languages</code> - retrieve the list of languages (name &amp; code)</li>
         </ul>
       </article>
     </div>

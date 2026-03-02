@@ -81,9 +81,48 @@ Check out a few resources that may come in handy when working with NestJS:
 
 ## AI Model Prototype
 
-This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a translation model that is **100% self‑contained** (no external AI services are required). Each language now includes a **two‑letter `code`** (e.g. `en` for English, `yo` for Yoruba) which is unique and can be used interchangeably with the name when querying the `/languages/:identifier` endpoint. Languages are stored in the database (seeded from the root `lang.json` file), and training examples are persisted as well. 
+This application hosts a simple in-memory translation prototype powered by NestJS. The API exposes endpoints for languages, training examples, and a translation model that is **100% self‑contained** (no external AI services are required). Each language now includes a **two‑letter `code`** (e.g. `en` for English, `yo` for Yoruba) which is unique and can be used interchangeably with the name when querying the `/languages/:identifier` endpoint.
+
+Languages are normally stored in the database (seeded on first run), but to make development easy the service will return the list bundled with the
+[`nigeria-languages`](https://www.npmjs.com/package/nigeria-languages) npm package if the database is not reachable or contains no rows.  This means the frontend can always fetch `/languages` even before you've started Postgres or run the migration/seed commands.  Training examples, however, do require a functioning database because they are persisted.
+
+When using a cloud LLM for translation the server inspects the model's output and
+if it appears to be a placeholder such as "hello in Hausa", consists solely
+of non‑Latin characters, or is just the original text unchanged it will
+respond with a helpful message telling the user to visit the training page
+and submit examples.  That way the UI won't blindly trust garbage text for
+under‑represented languages.
+
+The prompt sent to OpenAI is now **strict**: it explicitly tells the model
+that the only valid targets are English or one of the Nigerian languages in
+the dataset.  If the model attempts to translate to an unrelated language or
+cannot produce a real translation it is instructed to reply "I don't know."
+
+On the backend, a placeholder or unknown output results in a `400` error with
+a clear message.  The frontend displays this message in the training area so
+users are encouraged to keep contributing examples.  This prevents situations
+where a stray code such as `np` would cause Nepali text to slip through – the
+service now refuses and asks for more training data.
+
+The prompt sent to the LLM now also explicitly asks for Latin script output
+and tells the model to reply "I don't know" if it cannot translate.  This
+helps prevent the problem you saw where the model returned characters from
+another writing system even though the input was plain English.
 
 The translation logic has been improved with a basic local embedding algorithm — word‑hashing + normalization — so that new examples populate a vector store in PostgreSQL and nearest‑neighbor retrieval is used for queries. Fallbacks still include Levenshtein fuzzy matching and finally a first-example prefix. This design keeps everything on‑device, preserving privacy and making the project easier for contributors to run.
+
+### Useful endpoints
+
+> **Cloud LLM support**
+> 
+> If you provide an `OPENAI_API_KEY` in your `.env`, the service will use
+> OpenAI's embedding endpoint when examples are added and will attempt a
+> model‑based translation before falling back to the local vector/Levenshtein
+> logic.  This makes the prototype production ready: just sign up for a free
+> key, set the variable, and restart the server.  The default model used is
+> `gpt-3.5-turbo` for translation and `text-embedding-3-small` for
+> embeddings, but you can change those in `src/utils/openai.ts` if desired.
+> 
 
 ### Useful endpoints
 
@@ -119,6 +158,58 @@ This will cause the React app to prefix all API calls with the given base URL.
 
 #### Local embeddings
 When training examples are added via the `/training` endpoints, the server automatically computes a simple embedding vector from the source text using an internal word‑hash algorithm, then stores it alongside the record. The `/model/translate` route uses these vectors for a nearest‑neighbor lookup before falling back to fuzzy matching. All of this runs purely inside the application and database — no paid API keys or external models are required.
+
+### Fine‑tuning
+The service exposes an administrative endpoint `POST /model/fine-tune` which
+will package the current training examples into a JSONL file and request a
+fine‑tune from OpenAI (requires `OPENAI_API_KEY`). A helper script is also
+provided in `scripts/fine-tune.ts` that can be invoked from a cron job or CI:
+
+```bash
+cd ai-model
+npx ts-node scripts/fine-tune.ts
+```
+
+Running this script or hitting the endpoint will return a message such as
+`fine-tune started: ft-abc123`. You should schedule it periodically (daily,
+weekly, or when the dataset reaches a threshold) to keep the model weights
+aligned with newly submitted examples.
+
+Example cron entry (UNIX) to run nightly at 2 AM:
+
+```cron
+0 2 * * * cd /path/to/ai-model && \
+  export DATABASE_URL="postgresql://..." && \
+  npm run prisma:migrate && \
+  npx ts-node scripts/fine-tune.ts >> /var/log/naijalang-finetune.log 2>&1
+```
+
+Adjust paths and environment variables for your deployment.
+
+## Language data
+The list of supported Nigerian languages now comes from the published
+`nigeria-languages` npm package (see https://www.npmjs.com/package/nigeria-languages).
+When the database is empty the service will return the package list
+immediately, and the Prisma seed script also pulls from the package if
+installed, falling back to the workspace `lang.json` file.  This keeps the
+front end and ai-model service in sync with the canonical language dataset.
+
+> **Code collisions** ⚠️
+> 
+> Each language in that package has a **two‑letter `code`** (e.g. `en`, `yo`,
+> `np`, `m4`, …).  These are essentially arbitrary identifiers chosen by the
+> package authors and are not guaranteed to align with international ISO
+> codes.  For example, `np` in our dataset refers to **Nigerian Pidgin**, not
+> Nepali; `m4` refers to **Mandara**.  Our backend normalizes all incoming
+> identifiers using the package list (see `src/utils/languages.ts`), so
+> clients may pass either the code or the full language name when calling
+> `/model/translate` or submitting training examples.  The translation prompt
+> always uses the human‑readable name to avoid confusion.
+> 
+> If you ever need to adjust or rename codes in the future (to avoid
+> collisions or meet a different convention), you can simply edit the
+> `nigeria-languages` directory in this repo and update the DB via the
+> `seedFromFile` or `prisma` tools.
 
 
 To enable persistence with PostgreSQL and pgvector:

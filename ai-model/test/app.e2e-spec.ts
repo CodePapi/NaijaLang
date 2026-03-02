@@ -47,7 +47,7 @@ describe('AI Model API (e2e)', () => {
     const res = await supertest(app.getHttpServer()).get('/languages');
     expect(res.status).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
-    expect(res.body.some((l) => l.code === 'en')).toBe(true);
+    expect(res.body.some((l: any) => l.code === 'en')).toBe(true);
   });
 
   it('lookup by code and name', async () => {

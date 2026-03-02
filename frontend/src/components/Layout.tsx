@@ -33,6 +33,14 @@ export default function Layout({ children }: LayoutProps) {
               Translate
             </NavLink>
             <NavLink
+              to="/languages"
+              className={({ isActive }) =>
+                `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
+              }
+            >
+              Languages
+            </NavLink>
+            <NavLink
               to="/train"
               className={({ isActive }) =>
                 `font-medium ${isActive ? 'text-white' : 'text-gray-200'} hover:text-white`
@@ -101,6 +109,15 @@ export default function Layout({ children }: LayoutProps) {
                 }
               >
                 Translate
+              </NavLink>
+              <NavLink
+                to="/languages"
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block font-medium ${isActive ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`
+                }
+              >
+                Languages
               </NavLink>
               <NavLink
                 to="/train"
