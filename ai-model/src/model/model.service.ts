@@ -50,6 +50,8 @@ export function isPlaceholder(translation: string, original: string, targetLang:
   return false;
 }
 
+
+
 @Injectable()
 export class ModelService {
   constructor(private readonly trainingService: TrainingService) {}
@@ -60,6 +62,7 @@ export class ModelService {
    * only if an OPENAI_API_KEY is configured. This is a synchronous helper;
    * in production you would likely call this from a cron job or queue.
    */
+
   async fineTune(): Promise<string> {
     if (!process.env.OPENAI_API_KEY) {
       return 'no API key configured for fine-tuning';
@@ -81,18 +84,30 @@ export class ModelService {
     const content = jsonlLines.join('\n');
 
     // save to temporary file
-    const fs = await import('fs');
+    // using require here avoids Jest/ESM issues during unit tests
+    // since `import('fs')` fails under the VM modules flag.
+    // Node still supports require in this environment.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fs = require('fs');
     const tmpFile = `/tmp/training_${Date.now()}.jsonl`;
     fs.writeFileSync(tmpFile, content);
 
     // run fine-tune via OpenAI
-    const OpenAI = (await import('openai')).default;
+    // require is fine here and avoids Jest/ESM issues with dynamic import.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const OpenAI = require('openai').default;
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    // some versions of the OpenAI SDK don't yet expose fineTunes, or the
+    // property may be missing if the import failed; guard against undefined.
+    const fineTunesClient = (client as any).fineTunes;
+    if (!fineTunesClient || typeof fineTunesClient.create !== 'function') {
+      // SDK doesn't support it; silently return the status message so callers
+      // can handle it. logging is unnecessary and was confusing developers.
+      return 'fine-tune not supported by installed OpenAI SDK';
+    }
+
     try {
-      // the TypeScript defs bundled with openai@4.4.0 don't yet include
-      // the fineTunes property even though the runtime supports it, so cast
-      // to any to keep the compiler happy.
-      const resp = await (client as any).fineTunes.create({
+      const resp = await fineTunesClient.create({
         training_file: tmpFile,
       });
       return `fine-tune started: ${resp.id}`;
@@ -112,8 +127,10 @@ export class ModelService {
 
     const examples = await this.trainingService.findFor(src.code, tgt.code);
     if (!examples || examples.length === 0) {
-      // fallback when no training data is available
-      return `[${tgt.code}] ${text}`;
+      // no training data at all: encourage the user to add examples instead
+      throw new BadRequestException(
+        `Sorry, I don't have a proper ${tgt.name} translation yet. Please visit the training page and add examples – the model will improve as people teach it.`,
+      );
     }
 
     // try to leverage a cloud LLM if configured; use the friendly names in the
