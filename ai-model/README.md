@@ -171,9 +171,15 @@ npx ts-node scripts/fine-tune.ts
 ```
 
 Running this script or hitting the endpoint will return a message such as
-`fine-tune started: ft-abc123`. You should schedule it periodically (daily,
+`fine-tune started: ft-abc123` – or, if the OpenAI SDK installed in your
+workspace is too old or lacks the `fineTunes` API, the response will instead
+contain `fine-tune not supported by installed OpenAI SDK`.  The service no
+longer logs any warning for this case; the client sees the message and can
+handle it accordingly.  You should schedule fine-tunes periodically (daily,
 weekly, or when the dataset reaches a threshold) to keep the model weights
-aligned with newly submitted examples.
+aligned with newly submitted examples.  The returned message is safe to ignore
+if you don't plan to fine‑tune or simply indicates that you need to upgrade
+`openai` to a compatible version (e.g. `npm install openai@^4.4.0`).
 
 Example cron entry (UNIX) to run nightly at 2 AM:
 

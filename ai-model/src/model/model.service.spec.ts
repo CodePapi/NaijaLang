@@ -145,5 +145,33 @@ describe('ModelService', () => {
         /don't have a proper Hausa translation/i,
       );
     });
+
+    it('throws training hint when no examples exist', async () => {
+      fakeTraining.findFor = jest.fn().mockResolvedValue([]);
+      await expect(service.translate('foo', 'yo', 'en')).rejects.toThrow(
+        /don't have a proper English translation/i,
+      );
+    });
+
+    it('reports unsupported SDK when fineTunes missing', async () => {
+      // create a dummy OpenAI module that has no fineTunes property
+      jest.mock('openai', () => ({ default: jest.fn(() => ({})) }));
+      process.env.OPENAI_API_KEY = 'fake';
+      fakeTraining.findAll = jest.fn().mockResolvedValue([
+        { source: 'a', target: 'b', embedding: [0, 0, 0] },
+      ]);
+
+      // reinitialize service to pick up the mocked openai
+      const module: TestingModule = await Test.createTestingModule({
+        providers: [
+          ModelService,
+          { provide: TrainingService, useValue: fakeTraining },
+        ],
+      }).compile();
+      service = module.get<ModelService>(ModelService);
+
+      const res = await service.fineTune();
+      expect(res).toMatch(/not supported by installed OpenAI SDK/i);
+    });
   });
 });

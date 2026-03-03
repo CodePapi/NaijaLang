@@ -297,6 +297,16 @@ be prepared to iterate on reviews.
   examples** for that pair.
 - Avoid saving examples where the source and target text are identical;
   these are interpreted as placeholders and will trigger a training hint.
+- When you hit **Run fine‑tune now** the button will gray out and show a
+  "Running…" label so you don’t accidentally submit multiple requests.  Each
+  press sends a single POST to the server and the response message is shown
+  below the button.
+- If there are *no* examples for a given source/target pair (for instance,
+  translating Yoruba→English before any training data has been submitted) the
+  API now returns a clear training‑hint error instead of spitting the input
+  back with a `[en]` prefix.  The frontend displays this red message and the
+  translation box stays empty, prompting contributors to add the missing
+  examples.
 - Codes are flexible: you can refer to a language by its name (`"Mandara"`)
   or its two‑letter code (`"m4"`) interchangeably.
 

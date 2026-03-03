@@ -24,9 +24,9 @@ export async function translateWithOpenAI(
   // the list; any other target should be treated as unknown.  if unsure,
   // respond with "I don't know."
   let prompt = `You are a translation assistant. Convert text from ${sourceLang} to ${targetLang} and respond with the translated text only, no explanation. ` +
-               `Do not translate into or from any language other than English or one of the Nigerian languages in the provided examples. ` +
+               `Do not translate into or from any language other than one of the Nigerian languages in the provided examples. ` +
                `Use Latin script appropriate for the target language; avoid other writing systems. ` +
-               `If you cannot produce a valid translation, say "I don't know."`;
+               `If you cannot produce a valid translation, say "I don't know, keep on teaching me through training"`;
 
   if (snippet) {
     prompt += `\n\nExamples:\n${snippet}`;

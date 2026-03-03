@@ -16,6 +16,7 @@ export default function Train() {
   const [targetText, setTargetText] = React.useState('');
   const [message, setMessage] = React.useState('');
   const [fineTuneMsg, setFineTuneMsg] = React.useState('');
+  const [fineTuneLoading, setFineTuneLoading] = React.useState(false);
 
 
   React.useEffect(() => {
@@ -251,8 +252,10 @@ export default function Train() {
             )}
             <div className="mt-4">
               <button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded disabled:opacity-50"
                 onClick={async () => {
+                  if (fineTuneLoading) return;
+                  setFineTuneLoading(true);
                   try {
                     const base = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
                     const res = await fetch(`${base}/model/fine-tune`, { method: 'POST' });
@@ -261,11 +264,14 @@ export default function Train() {
                   } catch (e) {
                     console.error(e);
                     setFineTuneMsg('Fine-tune failed');
+                  } finally {
+                    setFineTuneLoading(false);
+                    setTimeout(() => setFineTuneMsg(''), 5000);
                   }
-                  setTimeout(() => setFineTuneMsg(''), 5000);
                 }}
+                disabled={fineTuneLoading}
               >
-                Run fine‑tune now
+                {fineTuneLoading ? 'Running…' : 'Run fine‑tune now'}
               </button>
               {fineTuneMsg && <p className="text-sm text-gray-700 mt-2">{fineTuneMsg}</p>}
             </div>
