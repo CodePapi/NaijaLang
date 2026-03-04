@@ -20,7 +20,7 @@ export class TrainingController {
 
   @Get()
   async findAll() {
-    return this.trainingService.findAll();
+    return await this.trainingService.findAll();
   }
 
   @Get(':source/:target')
@@ -28,6 +28,6 @@ export class TrainingController {
     @Param('source') source: string,
     @Param('target') target: string,
   ) {
-    return this.trainingService.findFor(source, target);
+    return await this.trainingService.findFor(source, target);
   }
 }

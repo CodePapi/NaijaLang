@@ -69,7 +69,7 @@ export class TrainingService {
     }
   }
 
-  async findAll() {
+  findAll() {
     if (!process.env.DATABASE_URL) return [];
     try {
       return this.prisma.trainingExample.findMany();
@@ -78,7 +78,7 @@ export class TrainingService {
     }
   }
 
-  async findFor(sourceLang: string, targetLang: string) {
+  findFor(sourceLang: string, targetLang: string) {
     if (!process.env.DATABASE_URL) return [];
     // normalize input before querying
     const src = normalizeLang(sourceLang);

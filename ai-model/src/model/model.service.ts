@@ -51,7 +51,7 @@ export function isPlaceholder(
   // if the output contains characters outside the basic ASCII Latin set
   // (letters, digits and common punctuation) it's probably gibberish – the
   // model often invents accented words when it doesn't understand a code.
-  const allowed = /^[a-zA-Z0-9\s\.,!\?'"\-]+$/;
+  const allowed = /^[a-zA-Z0-9\s.,!?'"-]+$/;
   if (!allowed.test(translation)) return true;
   return false;
 }

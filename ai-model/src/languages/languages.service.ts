@@ -56,7 +56,7 @@ export class LanguagesService {
       return null;
     }
     // allow lookup by either name or code
-    return this.prisma.language.findFirst({
+    return await this.prisma.language.findFirst({
       where: {
         OR: [{ name: identifier }, { code: identifier }],
       },
