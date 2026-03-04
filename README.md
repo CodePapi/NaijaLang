@@ -52,7 +52,8 @@ Components may be installed independently (see each package’s README).
 
 ### Prerequisites
 
-* Node.js 18+ (using nvm is recommended)
+* Node.js **20+** (using nvm is recommended; some dependencies like
+  Prisma and Nest require v20 or later)
 * PostgreSQL with the `pgvector` extension installed.
 
 ### Install workspace
