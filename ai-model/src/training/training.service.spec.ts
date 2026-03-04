@@ -19,6 +19,8 @@ describe('TrainingService', () => {
   let fakePrisma: Partial<PrismaService>;
 
   beforeEach(async () => {
+    // ensure service believes a database is configured so it calls prisma
+    process.env.DATABASE_URL = 'postgres://test';
     fakePrisma = {
       trainingExample: {
         create: jest.fn().mockResolvedValue({ id: 1 }),
@@ -34,6 +36,10 @@ describe('TrainingService', () => {
     }).compile();
 
     service = module.get<TrainingService>(TrainingService);
+  });
+
+  afterEach(() => {
+    delete process.env.DATABASE_URL;
   });
 
   it('should be defined', () => {
