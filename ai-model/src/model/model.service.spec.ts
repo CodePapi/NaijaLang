@@ -11,11 +11,8 @@ jest.mock('../utils/openai', () => ({
 
 // helper to access the mocked implementation
 function getTranslateMock(): jest.Mock {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   return require('../utils/openai').translateWithOpenAI;
 }
-
-
 
 describe('ModelService', () => {
   let service: ModelService;
@@ -25,9 +22,11 @@ describe('ModelService', () => {
     // avoid invoking cloud API during unit tests
     process.env.OPENAI_API_KEY = '';
     fakeTraining = {
-      findFor: jest.fn().mockResolvedValue([
-        { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
-      ]),
+      findFor: jest
+        .fn()
+        .mockResolvedValue([
+          { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
+        ]),
       findAll: jest.fn().mockResolvedValue([]),
     };
 
@@ -58,9 +57,11 @@ describe('ModelService', () => {
   });
 
   it('throws if the only example has identical source and target', async () => {
-    fakeTraining.findFor = jest.fn().mockResolvedValue([
-      { source: 'foo', target: 'foo', embedding: [0, 0, 0] },
-    ]);
+    fakeTraining.findFor = jest
+      .fn()
+      .mockResolvedValue([
+        { source: 'foo', target: 'foo', embedding: [0, 0, 0] },
+      ]);
     await expect(service.translate('foo', 'en', 'es')).rejects.toThrow(
       /don't have a proper/i,
     );
@@ -104,9 +105,11 @@ describe('ModelService', () => {
       const translateMockFn = getTranslateMock();
       translateMockFn.mockClear();
       // provide a fake example for code-based lookup
-      fakeTraining.findFor = jest.fn().mockResolvedValue([
-        { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
-      ]);
+      fakeTraining.findFor = jest
+        .fn()
+        .mockResolvedValue([
+          { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
+        ]);
 
       // call with a code identifier for Nigerian Pidgin
       const out1 = await service.translate('hello', 'np', 'es');
@@ -116,9 +119,11 @@ describe('ModelService', () => {
       expect(out2).toBe('hola');
 
       // also try a numeric-style code that lives in the package (Mandara)
-      fakeTraining.findFor = jest.fn().mockResolvedValue([
-        { source: 'foo', target: 'bar', embedding: [0, 0, 0] },
-      ]);
+      fakeTraining.findFor = jest
+        .fn()
+        .mockResolvedValue([
+          { source: 'foo', target: 'bar', embedding: [0, 0, 0] },
+        ]);
       const out3 = await service.translate('foo', 'm4', 'en');
       expect(out3).toBe('bar');
 
@@ -128,7 +133,8 @@ describe('ModelService', () => {
       expect(srcName.toLowerCase()).toContain('nigerian pidgin');
       // one of the calls should have used the Mandara name
       const foundMandara = translateMockFn.mock.calls.some(
-        (c: any[]) => typeof c[1] === 'string' && c[1].toLowerCase().includes('mandara'),
+        (c: any[]) =>
+          typeof c[1] === 'string' && c[1].toLowerCase().includes('mandara'),
       );
       expect(foundMandara).toBe(true);
       expect(tgtName).toBeDefined();
@@ -137,9 +143,11 @@ describe('ModelService', () => {
     it('throws when AI returns a placeholder result', async () => {
       const translateMockFn = getTranslateMock();
       translateMockFn.mockClear();
-      fakeTraining.findFor = jest.fn().mockResolvedValue([
-        { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
-      ]);
+      fakeTraining.findFor = jest
+        .fn()
+        .mockResolvedValue([
+          { source: 'hello', target: 'hola', embedding: [0, 1, 0] },
+        ]);
       translateMockFn.mockResolvedValue('hello in Hausa');
       await expect(service.translate('hello', 'en', 'ha')).rejects.toThrow(
         /don't have a proper Hausa translation/i,
@@ -157,9 +165,11 @@ describe('ModelService', () => {
       // create a dummy OpenAI module that has no fineTunes property
       jest.mock('openai', () => ({ default: jest.fn(() => ({})) }));
       process.env.OPENAI_API_KEY = 'fake';
-      fakeTraining.findAll = jest.fn().mockResolvedValue([
-        { source: 'a', target: 'b', embedding: [0, 0, 0] },
-      ]);
+      fakeTraining.findAll = jest
+        .fn()
+        .mockResolvedValue([
+          { source: 'a', target: 'b', embedding: [0, 0, 0] },
+        ]);
 
       // reinitialize service to pick up the mocked openai
       const module: TestingModule = await Test.createTestingModule({

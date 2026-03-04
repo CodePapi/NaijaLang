@@ -3,7 +3,6 @@ import { PrismaService } from '../prisma/prisma.service';
 import { embed as textEmbed } from '../utils/embedding';
 import { normalizeLang } from '../utils/languages';
 
-
 export interface TrainingExample {
   sourceLang: string;
   targetLang: string;
@@ -70,7 +69,7 @@ export class TrainingService {
     }
   }
 
-  async findAll() {
+  findAll() {
     if (!process.env.DATABASE_URL) return [];
     try {
       return this.prisma.trainingExample.findMany();
@@ -79,7 +78,7 @@ export class TrainingService {
     }
   }
 
-  async findFor(sourceLang: string, targetLang: string) {
+  findFor(sourceLang: string, targetLang: string) {
     if (!process.env.DATABASE_URL) return [];
     // normalize input before querying
     const src = normalizeLang(sourceLang);
@@ -96,4 +95,3 @@ export class TrainingService {
     }
   }
 }
-

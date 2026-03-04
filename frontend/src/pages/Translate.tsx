@@ -52,7 +52,8 @@ export default function Translate() {
                 id="srcLang"
                 className="mt-1 block w-full border p-2 rounded"
                 value={srcLang}
-                onChange={e => setSrcLang(e.target.value)}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                onChange={e => setSrcLang((e as any).target.value)}
               >
                 {languages.map(l => (
                   <option key={l.code || l.name} value={l.code || l.name}>
@@ -102,6 +103,7 @@ export default function Translate() {
                   const json = await apiTranslate(text, src, tgt);
                   setResult(json.translation || '(no translation)');
                   setTrainMsg('');
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } catch (err: any) {
                   console.error(err);
                   const message = err?.message || 'error contacting server';

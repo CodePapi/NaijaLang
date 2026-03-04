@@ -1,10 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { TrainingService } from './training.service';
 import type { TrainingExample } from './training.service';
 import { CreateTrainingDto } from '../dto/create-training.dto';
@@ -26,7 +20,7 @@ export class TrainingController {
 
   @Get()
   async findAll() {
-    return this.trainingService.findAll();
+    return await this.trainingService.findAll();
   }
 
   @Get(':source/:target')
@@ -34,6 +28,6 @@ export class TrainingController {
     @Param('source') source: string,
     @Param('target') target: string,
   ) {
-    return this.trainingService.findFor(source, target);
+    return await this.trainingService.findFor(source, target);
   }
 }

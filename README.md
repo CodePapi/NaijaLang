@@ -52,7 +52,8 @@ Components may be installed independently (see each package’s README).
 
 ### Prerequisites
 
-* Node.js 18+ (using nvm is recommended)
+* Node.js **20+** (using nvm is recommended; some dependencies like
+  Prisma and Nest require v20 or later)
 * PostgreSQL with the `pgvector` extension installed.
 
 ### Install workspace
@@ -98,6 +99,18 @@ The frontend defaults to calling `http://localhost:3000`; override with
 ```bash
 npm run test              # runs unit + e2e across the workspace
 ```
+
+### Continuous integration
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push
+and pull request to `main`.  It installs dependencies for both the API and
+frontend, lints and formats the code, builds the frontend bundle, and
+dispatches the complete test suite.  Keep this workflow green to ensure the
+project remains healthy; contributors should verify their changes locally
+before opening a pull request.
+
+You can simulate the CI steps locally by running the same commands in each
+package (see the `ci.yml` file for the exact sequence).
 
 ---
 

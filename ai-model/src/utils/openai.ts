@@ -11,9 +11,13 @@ export async function translateWithOpenAI(
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   // assemble few-shot examples (if any)
-  const snippet = examples && examples.length
-    ? examples.slice(0, 5).map((e) => `${e.source} -> ${e.target}`).join('\n')
-    : '';
+  const snippet =
+    examples && examples.length
+      ? examples
+          .slice(0, 5)
+          .map((e) => `${e.source} -> ${e.target}`)
+          .join('\n')
+      : '';
 
   // build an instruction emphasizing brevity and translation only
   // also insist on Latin‑script output and a polite 'I don't know' if unsure
@@ -23,10 +27,11 @@ export async function translateWithOpenAI(
   // **only** translate between English and one of the Nigerian languages in
   // the list; any other target should be treated as unknown.  if unsure,
   // respond with "I don't know."
-  let prompt = `You are a translation assistant. Convert text from ${sourceLang} to ${targetLang} and respond with the translated text only, no explanation. ` +
-               `Do not translate into or from any language other than one of the Nigerian languages in the provided examples. ` +
-               `Use Latin script appropriate for the target language; avoid other writing systems. ` +
-               `If you cannot produce a valid translation, say "I don't know, keep on teaching me through training"`;
+  let prompt =
+    `You are a translation assistant. Convert text from ${sourceLang} to ${targetLang} and respond with the translated text only, no explanation. ` +
+    `Do not translate into or from any language other than one of the Nigerian languages in the provided examples. ` +
+    `Use Latin script appropriate for the target language; avoid other writing systems. ` +
+    `If you cannot produce a valid translation, say "I don't know, keep on teaching me through training"`;
 
   if (snippet) {
     prompt += `\n\nExamples:\n${snippet}`;
@@ -54,7 +59,10 @@ export async function translateWithOpenAI(
           const c = (item as any).content;
           if (typeof c === 'string') return c.trim();
           if (Array.isArray(c)) {
-            const inner = c.find((x: any) => x.type === 'output_text' && typeof x.text === 'string');
+            const inner = c.find(
+              (x: any) =>
+                x.type === 'output_text' && typeof x.text === 'string',
+            );
             if (inner) return inner.text.trim();
           }
         }

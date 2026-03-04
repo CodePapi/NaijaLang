@@ -14,7 +14,7 @@ export async function embed(text: string, dim = 128): Promise<number[]> {
       input: text,
     });
     // the new client returns data array
-    return resp.data[0].embedding as number[];
+    return resp.data[0].embedding;
   }
 
   // local fallback hashing embedder
@@ -23,7 +23,7 @@ export async function embed(text: string, dim = 128): Promise<number[]> {
   for (const w of words) {
     let h = 0;
     for (let i = 0; i < w.length; i++) {
-      h = ((h << 5) - h) + w.charCodeAt(i);
+      h = (h << 5) - h + w.charCodeAt(i);
       h |= 0;
     }
     const idx = Math.abs(h) % dim;

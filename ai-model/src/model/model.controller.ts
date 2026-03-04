@@ -9,7 +9,11 @@ export class ModelController {
   @Post('translate')
   async translate(@Body() body: TranslateDto) {
     const { text, sourceLang, targetLang } = body;
-    const translation = await this.modelService.translate(text, sourceLang, targetLang);
+    const translation = await this.modelService.translate(
+      text,
+      sourceLang,
+      targetLang,
+    );
     return { translation };
   }
 

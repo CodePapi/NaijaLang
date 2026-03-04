@@ -106,6 +106,7 @@ export default function Train() {
                     .split(/\r?\n/)
                     .map(l => l.trim())
                     .filter(Boolean);
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   const pairs: any[] = [];
                   for (const l of lines) {
                     const parts = l.split(/→|=>|=/).map(p => p.trim());
@@ -138,9 +139,12 @@ export default function Train() {
                   const file = e.target.files?.[0];
                   if (!file) return;
                   const text = await file.text();
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   let arr: any[] = [];
                   if (file.name.endsWith('.json')) {
-                    try { arr = JSON.parse(text); } catch {}
+                    try { arr = JSON.parse(text); } catch {
+                      // ignore parse errors
+                    }
                   } else {
                     const lines = text.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
                     for (const l of lines) {

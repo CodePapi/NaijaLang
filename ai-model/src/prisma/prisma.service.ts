@@ -1,7 +1,8 @@
 import 'dotenv/config';
 
 // ensure binary engine is used by default to avoid adapter requirement
-process.env.PRISMA_CLIENT_ENGINE_TYPE = process.env.PRISMA_CLIENT_ENGINE_TYPE || 'binary';
+process.env.PRISMA_CLIENT_ENGINE_TYPE =
+  process.env.PRISMA_CLIENT_ENGINE_TYPE || 'binary';
 
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
@@ -14,7 +15,10 @@ export class PrismaService
 {
   constructor() {
     // diagnostic
-    console.log('PRISMA_CLIENT_ENGINE_TYPE at PrismaService ctor ->', process.env.PRISMA_CLIENT_ENGINE_TYPE);
+    console.log(
+      'PRISMA_CLIENT_ENGINE_TYPE at PrismaService ctor ->',
+      process.env.PRISMA_CLIENT_ENGINE_TYPE,
+    );
 
     // Prisma 7 requires adapter or accelerateUrl when using engine type "client".
     // Build a pool configuration that always has a password string to satisfy

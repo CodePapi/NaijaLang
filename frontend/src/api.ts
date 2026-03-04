@@ -17,6 +17,7 @@ export async function getLanguages() {
     return res.json();
   } catch (e) {
     console.warn('falling back to local nigeria-languages package', e);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return languagesPkg as any[];
   }
 }
@@ -38,6 +39,7 @@ export async function translate(text:string, sourceLang:string, targetLang:strin
   return res.json();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function addExample(example: any) {
   const url = BASE ? `${BASE}/training` : '/training';
   const res = await fetch(url, {
@@ -49,6 +51,7 @@ export async function addExample(example: any) {
   return res.json();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function addBatch(examples: any[]) {
   const url = BASE ? `${BASE}/training/batch` : '/training/batch';
   const res = await fetch(url, {

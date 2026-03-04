@@ -11,7 +11,6 @@ export class LanguagesService {
     // if we don't know where the DB lives, don't even try the query
     if (!process.env.DATABASE_URL) {
       try {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const pkg = require('nigeria-languages');
         if (Array.isArray(pkg)) return pkg;
       } catch {
@@ -31,7 +30,6 @@ export class LanguagesService {
     }
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
       const pkg = require('nigeria-languages');
       if (Array.isArray(pkg)) return pkg;
     } catch {
@@ -44,10 +42,13 @@ export class LanguagesService {
     // when there is no DB configured we can still search the package
     if (!process.env.DATABASE_URL) {
       try {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const pkg = require('nigeria-languages');
         if (Array.isArray(pkg)) {
-          return pkg.find((l: any) => l.name === identifier || l.code === identifier) || null;
+          return (
+            pkg.find(
+              (l: any) => l.name === identifier || l.code === identifier,
+            ) || null
+          );
         }
       } catch {
         // ignore
@@ -55,12 +56,9 @@ export class LanguagesService {
       return null;
     }
     // allow lookup by either name or code
-    return this.prisma.language.findFirst({
+    return await this.prisma.language.findFirst({
       where: {
-        OR: [
-          { name: identifier },
-          { code: identifier },
-        ],
+        OR: [{ name: identifier }, { code: identifier }],
       },
     });
   }
@@ -73,7 +71,6 @@ export class LanguagesService {
     // to reading lang.json from the workspace root.
     let langs: any[] = [];
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
       const pkg = require('nigeria-languages');
       if (Array.isArray(pkg)) {
         langs = pkg;
@@ -93,8 +90,17 @@ export class LanguagesService {
     for (const l of langs) {
       await this.prisma.language.upsert({
         where: { name: l.name },
-        update: { type: l.type || null, info: l.info || null, code: l.code || null },
-        create: { name: l.name, type: l.type || null, info: l.info || null, code: l.code || null },
+        update: {
+          type: l.type || null,
+          info: l.info || null,
+          code: l.code || null,
+        },
+        create: {
+          name: l.name,
+          type: l.type || null,
+          info: l.info || null,
+          code: l.code || null,
+        },
       });
     }
     return { inserted: langs.length };

@@ -9,7 +9,15 @@ describe('TrainingController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [TrainingController],
       providers: [
-        { provide: TrainingService, useValue: { add: jest.fn(), addBatch: jest.fn(), findAll: jest.fn(), findFor: jest.fn() } },
+        {
+          provide: TrainingService,
+          useValue: {
+            add: jest.fn(),
+            addBatch: jest.fn(),
+            findAll: jest.fn(),
+            findFor: jest.fn(),
+          },
+        },
       ],
     }).compile();
 
