@@ -1,10 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { TrainingService } from './training.service';
 import type { TrainingExample } from './training.service';
 import { CreateTrainingDto } from '../dto/create-training.dto';

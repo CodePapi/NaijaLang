@@ -16,23 +16,29 @@ function levenshtein(a: string, b: string): number {
       if (b.charAt(i - 1) === a.charAt(j - 1)) {
         matrix[i][j] = matrix[i - 1][j - 1];
       } else {
-        matrix[i][j] =
-          Math.min(
-            matrix[i - 1][j - 1] + 1, // substitution
-            matrix[i][j - 1] + 1, // insertion
-            matrix[i - 1][j] + 1, // deletion
-          );
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1, // substitution
+          matrix[i][j - 1] + 1, // insertion
+          matrix[i - 1][j] + 1, // deletion
+        );
       }
     }
   }
   return matrix[b.length][a.length];
 }
 
-import { embed as textEmbed, distance as vectorDistance } from '../utils/embedding';
+import {
+  embed as textEmbed,
+  distance as vectorDistance,
+} from '../utils/embedding';
 import { translateWithOpenAI } from '../utils/openai';
 
 // simple heuristic to detect when the model returned a dummy translation
-export function isPlaceholder(translation: string, original: string, targetLang: string): boolean {
+export function isPlaceholder(
+  translation: string,
+  original: string,
+  targetLang: string,
+): boolean {
   if (!translation) return false;
   const normalized = translation.toLowerCase().trim();
   const orig = original.toLowerCase().trim();
@@ -49,8 +55,6 @@ export function isPlaceholder(translation: string, original: string, targetLang:
   if (!allowed.test(translation)) return true;
   return false;
 }
-
-
 
 @Injectable()
 export class ModelService {
@@ -87,19 +91,19 @@ export class ModelService {
     // using require here avoids Jest/ESM issues during unit tests
     // since `import('fs')` fails under the VM modules flag.
     // Node still supports require in this environment.
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     const fs = require('fs');
     const tmpFile = `/tmp/training_${Date.now()}.jsonl`;
     fs.writeFileSync(tmpFile, content);
 
     // run fine-tune via OpenAI
     // require is fine here and avoids Jest/ESM issues with dynamic import.
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     const OpenAI = require('openai').default;
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     // some versions of the OpenAI SDK don't yet expose fineTunes, or the
     // property may be missing if the import failed; guard against undefined.
-    const fineTunesClient = (client as any).fineTunes;
+    const fineTunesClient = client.fineTunes;
     if (!fineTunesClient || typeof fineTunesClient.create !== 'function') {
       // SDK doesn't support it; silently return the status message so callers
       // can handle it. logging is unnecessary and was confusing developers.
@@ -119,8 +123,8 @@ export class ModelService {
 
   async translate(
     text: string,
-    sourceLang:string,
-    targetLang:string,
+    sourceLang: string,
+    targetLang: string,
   ): Promise<string> {
     const src = normalizeLang(sourceLang);
     const tgt = normalizeLang(targetLang);
@@ -136,7 +140,12 @@ export class ModelService {
     // try to leverage a cloud LLM if configured; use the friendly names in the
     // prompt so the model understands languages like "Nigerian Pidgin" (code
     // "np") instead of seeing terse codes.
-    const aiResult = await translateWithOpenAI(text, src.name, tgt.name, examples);
+    const aiResult = await translateWithOpenAI(
+      text,
+      src.name,
+      tgt.name,
+      examples,
+    );
     if (aiResult) {
       // if the model just returned a placeholder phrase, encourage training
       if (isPlaceholder(aiResult, text, tgt.code)) {

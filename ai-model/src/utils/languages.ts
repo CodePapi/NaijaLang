@@ -17,7 +17,6 @@ let _cache: LanguageDef[] | null = null;
 function loadList(): LanguageDef[] {
   if (_cache) return _cache;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const pkg = require('nigeria-languages');
     if (Array.isArray(pkg)) {
       _cache = pkg;
@@ -59,9 +58,10 @@ export function findLanguage(identifier: string): LanguageDef | null {
  * When there is no match we fall back to using the original string for both
  * fields so that downstream logic can still function without error.
  */
-export function normalizeLang(
-  identifier: string,
-): { code: string; name: string } {
+export function normalizeLang(identifier: string): {
+  code: string;
+  name: string;
+} {
   const found = findLanguage(identifier);
   if (!found) {
     return { code: identifier, name: identifier };

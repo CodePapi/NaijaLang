@@ -3,7 +3,6 @@ import { ModelController } from './model.controller';
 import { ModelService } from './model.service';
 import { TrainingService } from '../training/training.service';
 
-
 describe('ModelController', () => {
   let controller: ModelController;
 

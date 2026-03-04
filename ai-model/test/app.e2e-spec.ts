@@ -27,7 +27,9 @@ describe('AI Model API (e2e)', () => {
     const file = path.resolve(__dirname, '../../lang.json');
     const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
     for (const l of data.languages || []) {
-      await prisma.language.create({ data: { name: l.name, code: l.code, type: l.type, info: l.info } });
+      await prisma.language.create({
+        data: { name: l.name, code: l.code, type: l.type, info: l.info },
+      });
     }
   });
 
@@ -60,8 +62,16 @@ describe('AI Model API (e2e)', () => {
   });
 
   it('training & translate', async () => {
-    const example = { sourceLang: 'en', targetLang: 'yo', source: 'hello', target: 'bawo' };
-    await supertest(app.getHttpServer()).post('/training').send(example).expect(201);
+    const example = {
+      sourceLang: 'en',
+      targetLang: 'yo',
+      source: 'hello',
+      target: 'bawo',
+    };
+    await supertest(app.getHttpServer())
+      .post('/training')
+      .send(example)
+      .expect(201);
     const tr = await supertest(app.getHttpServer())
       .post('/model/translate')
       .send({ text: 'hello', sourceLang: 'en', targetLang: 'yo' })

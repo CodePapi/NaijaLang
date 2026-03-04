@@ -3,7 +3,6 @@ import { PrismaService } from '../prisma/prisma.service';
 import { embed as textEmbed } from '../utils/embedding';
 import { normalizeLang } from '../utils/languages';
 
-
 export interface TrainingExample {
   sourceLang: string;
   targetLang: string;
@@ -96,4 +95,3 @@ export class TrainingService {
     }
   }
 }
-
